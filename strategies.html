@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiches Stratégiques au Quotidien | deobarto</title>
+  <meta name="description" content="Outils et stratégies concrètes de renforcement positif et de communication adaptée pour gérer le TOP au quotidien.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1.3.1">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="progress-bar"></div>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="theme-toggle-container">
+      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
+      </button>
+    </div>
+    
+    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
+    <div class="header-content">
+      <div class="header-tag">Chapitre III : Outils Pratiques</div>
+      <h1 class="main-title">Fiches Stratégiques au Quotidien</h1>
+      <p class="main-subtitle">
+      Des protocoles concrets et modifiables pour désamorcer les conflits à la maison.
+    </p>
+    </div>
+    
+
+
+  </header>
+
+  <!-- Sticky Horizontal Navigation -->
+  <nav class="header-nav sticky-nav">
+    <div class="sticky-nav-container">
+      <ul class="nav-horizontal" id="toc-nav">
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
+        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
+        <li class="active"><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
+        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
+        <li><a href="synthese.html">📄 V. Synthèse</a></li>
+      </ul>
+      <div class="search-container horizontal-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layout Grid -->
+  <div class="container no-sidebar">
+
+    <!-- Main Content -->
+    <main>
+      
+      <section id="communication-rules">
+        <span class="section-badge">Communication</span>
+        <h2><span>Adapter sa communication</span></h2>
+        <p class="lead">
+          L'opposition est une réaction automatique face à la contrainte frontale. Reformuler ses demandes permet d'éviter les verrous de résistance.
+        </p>
+
+        <div class="comm-card">
+          <div class="comm-item dont">
+            <span class="comm-badge">A Éviter (Frontal)</span>
+            <span>❌ « Va te brosser les dents maintenant. »</span>
+          </div>
+          <div class="comm-item do">
+            <span class="comm-badge">A Privilégier (Choix Limité)</span>
+            <span>💡 « Tu préfères te brosser les dents avant ou après avoir mis ton pyjama ? »</span>
+          </div>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.5rem;">
+          <em>Principe de l'illusion de contrôle :</em> Offrir deux alternatives valides pour le parent redonne un sentiment de maîtrise à l'enfant sans bloquer la consigne.
+        </p>
+      </section>
+
+      <section id="worksheets-parentales">
+        <span class="section-badge">Fiches d'action</span>
+        <h2><span>Fiches Pratiques Interactives</span></h2>
+        <p>Utilisez ces fiches comme des rappels au quotidien. Cochez les étapes validées. Vos coches sont sauvegardées automatiquement dans votre navigateur.</p>
+
+        <!-- Worksheets Accordion -->
+        <div class="worksheet-grid">
+          
+          <!-- Card 1 -->
+          <div class="worksheet-card">
+            <div class="worksheet-header" onclick="toggleWorksheet(this)">
+              <div class="worksheet-title-group">
+                <div class="worksheet-num">1</div>
+                <h4>Mettre en place le renforcement positif sélectif</h4>
+              </div>
+              <span class="chevron-icon">▼</span>
+            </div>
+            <div class="worksheet-body">
+              <p>Valoriser les attitudes de coopération permet d'augmenter leur fréquence tout en évitant d'alimenter les colères par de l'attention négative.</p>
+              <ul class="worksheet-steps">
+                <li><input type="checkbox"> <strong>Ignorer activement</strong> les provocations mineures (soupirs, grognements, regards en l'air, claquement de portes) tant que la tâche demandée est effectuée.</li>
+                <li><input type="checkbox"> Valoriser immédiatement les coopérations et la gestion de frustration de manière chaleureuse.</li>
+                <li><input type="checkbox"> Formuler des compliments précis décrivant l'action valorisée (ex: <em>« Merci d'avoir rangé tes chaussures du premier coup, c'est super. »</em>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="worksheet-card">
+            <div class="worksheet-header" onclick="toggleWorksheet(this)">
+              <div class="worksheet-title-group">
+                <div class="worksheet-num">2</div>
+                <h4>Gérer la communication en période de fatigue (Fin de journée)</h4>
+              </div>
+              <span class="chevron-icon">▼</span>
+            </div>
+            <div class="worksheet-body">
+              <p>Au retour de l'école ou avant le coucher, l'inhibition neurologique de l'enfant est au plus bas. Simplifiez la charge cognitive.</p>
+              <ul class="worksheet-steps">
+                <li><input type="checkbox"> Éviter les questions ouvertes et complexes (ex: <em>« Comment s'est passée ta journée ? »</em> ou <em>« Qu'est-ce que tu veux faire ce soir ? »</em>).</li>
+                <li><input type="checkbox"> Privilégier des phrases affirmatives, courtes et des consignes fermées et directes.</li>
+                <li><input type="checkbox"> Utiliser des choix fermés limités à deux options (illusion de contrôle) pour les transitions délicates (douche, repas, coucher).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="worksheet-card">
+            <div class="worksheet-header" onclick="toggleWorksheet(this)">
+              <div class="worksheet-title-group">
+                <div class="worksheet-num">3</div>
+                <h4>Canaliser son « Superpouvoir » : L'Hyperfocus</h4>
+              </div>
+              <span class="chevron-icon">▼</span>
+            </div>
+            <div class="worksheet-body">
+              <p>L'hyperfocus permet à l'enfant TDAH/TOP de concentrer 100% de son énergie sur une passion. C'est un régulateur de tensions majeur.</p>
+              <ul class="worksheet-steps">
+                <li><input type="checkbox"> Identifier les activités de passion qui déclenchent cette concentration absolue (sport, art, diabolo, jeux de logique).</li>
+                <li><input type="checkbox"> Sanctuariser dans l'emploi du temps des moments de pratique libre sans contrainte ou consigne.</li>
+                <li><input type="checkbox"> Utiliser ces activités comme un canal de réussite pour restaurer son image de soi et calmer son système nerveux.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre III : Outils pratiques et fiches d'action.</p>
+  </footer>
+
+  <script src="app.js?v=1.3.1"></script>
+</body>
+</html>

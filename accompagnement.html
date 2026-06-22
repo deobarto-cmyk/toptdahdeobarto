@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accompagnement Professionnel & Réflexion | deobarto</title>
+  <meta name="description" content="Ressources d'accompagnement médical, groupes de méthode Barkley (PEHP), livre conseillé et carnet d'analyse des conflits.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1.3.1">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="progress-bar"></div>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="theme-toggle-container">
+      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
+      </button>
+    </div>
+    
+    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
+    <div class="header-content">
+      <div class="header-tag">Chapitre IV : Suivi & Accompagnement</div>
+      <h1 class="main-title">Prise en Charge Professionnelle</h1>
+      <p class="main-subtitle">
+      S'entourer des bons spécialistes et acquérir des méthodes reconnues scientifiquement.
+    </p>
+    </div>
+    
+
+
+  </header>
+
+  <!-- Sticky Horizontal Navigation -->
+  <nav class="header-nav sticky-nav">
+    <div class="sticky-nav-container">
+      <ul class="nav-horizontal" id="toc-nav">
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
+        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
+        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
+        <li class="active"><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
+        <li><a href="synthese.html">📄 V. Synthèse</a></li>
+      </ul>
+      <div class="search-container horizontal-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layout Grid -->
+  <div class="container no-sidebar">
+
+    <!-- Main Content -->
+    <main>
+      
+      <section id="professionnels-suivi">
+        <span class="section-badge">Suivi Clinique</span>
+        <h2><span>S'entourer des professionnels</span></h2>
+        <p class="lead">
+          Le Trouble Oppositionnel avec Provocation est lourd à gérer et génère un épuisement majeur chez les parents. Un accompagnement médical et thérapeutique solide est nécessaire.
+        </p>
+
+        <ul class="pretty-list">
+          <li><strong>Le neuropédiatre ou pédopsychiatre :</strong> Ces spécialistes posent le diagnostic et mettent en place le suivi. Si un traitement médical pour le TDAH sous-jacent est prescrit et s'avère efficace, il permet souvent de <strong>diminuer fortement les symptômes du TOP</strong>, en ouvrant une fenêtre d'attention propice aux apprentissages éducatifs.</li>
+          <li><strong>Le Programme d'Entraînement aux Habiletés Parentales (PEHP) :</strong> Les groupes de formation pour parents (comme la <strong>méthode Barkley</strong>) sont recommandés internationalement. Ils apprennent aux parents des méthodes scientifiquement validées pour réorganiser l'attention à la maison et désamorcer le cercle vicieux de la provocation.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Dispositifs d'Accompagnement -->
+      <section id="dispositifs-guidance" style="border-top: 4px solid var(--primary);">
+        <span class="section-badge" style="color: var(--primary);">Dispositifs existants</span>
+        <h2><span>🏫</span> Accompagnement & Guidance Parentale</h2>
+        <p class="lead">
+          Pour faire face au TDAH associé au TOP, il est indispensable de se former à des méthodes de communication spécifiques et de s'appuyer sur des structures d'aide dédiées.
+        </p>
+
+        <h3 style="margin-top: 2rem;">1. Le Programme de Référence : La Méthode Barkley</h3>
+        <p>
+          Les <strong>Programmes d'Entraînement aux Habiletés Parentales (PEHP)</strong>, et plus particulièrement la <strong>méthode Barkley</strong>, constituent la référence internationale absolue pour accompagner un enfant TDAH + TOP. Ces ateliers apprennent concrètement aux parents à :
+        </p>
+        <div class="matrix-grid">
+          <div class="matrix-card" style="border-top: 3px solid var(--primary);">
+            <h4>🔄 Inverser la dynamique</h4>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem;">
+              Modifier la structure des conflits à la maison en retirant l'attention sur les comportements d'opposition.
+            </p>
+          </div>
+          <div class="matrix-card" style="border-top: 3px solid var(--accent);">
+            <h4>✨ Renforcement Positif</h4>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem;">
+              Mettre en place un système de jetons et de récompenses immédiates pour valoriser activement les comportements de coopération.
+            </p>
+          </div>
+          <div class="matrix-card" style="border-top: 3px solid var(--primary);">
+            <h4>🔇 Ignorance Active</h4>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem;">
+              Apprendre à ignorer de manière systématique les provocations mineures (grognements, soupirs) pour ne pas nourrir la crise.
+            </p>
+          </div>
+          <div class="matrix-card" style="border-top: 3px solid var(--accent);">
+            <h4>🤝 Recréer du lien</h4>
+            <p style="font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem;">
+              Planifier des moments exclusifs de complicité (sans consignes ni attentes) pour restaurer la relation parent-enfant.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2.5rem;">2. Comment y accéder concrètement ?</h3>
+        <p>
+          Plusieurs structures et professionnels de santé permettent d'accéder à cette guidance parentale :
+        </p>
+        <ul class="pretty-list" style="margin-bottom: 2rem;">
+          <li><strong>L'Association HyperSupers TDAH France (<a href="https://www.tdah-france.fr" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">tdah-france.fr</a>) :</strong> C'est un point de départ incontournable. L'association informe, oriente et co-organise régulièrement des groupes de guidance parentale partout en France (comme les sessions de pré-inscription pour le mois de juin 2026). Des modules d'auto-formation en ligne gratuits sont également proposés aux adhérents.</li>
+          <li><strong>Le suivi hospitalier ou CMP / CMPE :</strong> Les services de psychiatrie infanto-juvénile (PIJ) des hôpitaux ou les Centres Médico-Psychologiques organisent régulièrement ces ateliers comportementaux sous forme de séances collectives.</li>
+          <li><strong>Les structures d'aide à domicile (SESSAD) :</strong> L'intervention d'un éducateur spécialisé via un SESSAD (Service d'Éducation Spécialisée et de Soins à Domicile) permet d'appliquer et d'adapter ces stratégies directement au sein de votre domicile.</li>
+        </ul>
+
+        <h3 style="margin-top: 2.5rem;">3. Pourquoi c'est indispensable ?</h3>
+        <p>
+          L'enfant TOP présente un dysfonctionnement neurologique de la gestion de la frustration et des circuits de la récompense : il est bloqué dans l'instant présent et gère très mal les consignes directes. La guidance parentale vous aide à adapter votre communication (via l'illusion de contrôle ou des consignes ultra-courtes) pour contourner cette rigidité sans vous épuiser.
+        </p>
+
+        <div class="alert-box" style="margin-top: 1.5rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary);">
+          <strong>💡 Complémentarité médicale essentielle :</strong> Les outils de la guidance parentale sont d'autant plus efficaces lorsqu'ils sont couplés à une prise en charge médicale. Si votre enfant reçoit un traitement médicamenteux pour son TDAH, les comportements d'opposition sont souvent fortement réduits pendant les heures où la molécule fait effet, ce qui ouvre la <strong>fenêtre idéale</strong> pour appliquer vos stratégies éducatives éducatives et ancrer durablement la coopération.
+        </div>
+
+        <!-- Interactive Department Selector -->
+        <div class="reflection-container" style="margin-top: 2.5rem; border-color: var(--accent);">
+          <h3 style="color: var(--accent);"><span>📍</span> Trouver des contacts et groupes dans mon département</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Sélectionnez votre département pour identifier votre région administrative et obtenir le lien direct vers les bénévoles et les groupes de guidance parentale de l'association <strong>HyperSupers TDAH France</strong>.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column;">
+              <input type="text" id="select-dept" class="form-control" oninput="updateDeptContact()" placeholder="Saisissez votre département (ex : 06, Paris, 75...)" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-alt); color: var(--text-main); font-family: var(--font-body); font-size: 0.95rem;">
+              <div id="custom-suggestions" class="suggestions-list"></div>
+            </div>
+          </div>
+
+          <div id="dept-result-box" style="display: none; background: var(--bg-alt); border: 1px solid var(--card-border); padding: 1.25rem; border-radius: 10px; margin-top: 1rem; animation: slideDown 0.3s ease;">
+            <h4 id="dept-title" style="margin: 0 0 0.5rem 0; font-family: var(--font-heading); color: var(--text-main); font-size: 1.1rem;"></h4>
+            <p id="dept-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;">
+              <a id="dept-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-action primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <span>🌐</span> Contacts Région (HyperSupers)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommended Reading -->
+      <section id="lecture-conseillee">
+        <span class="section-badge">Littérature</span>
+        <h2><span>Livre de référence conseillé</span></h2>
+        <p>Pour approfondir votre compréhension et décoder les comportements de votre enfant, un ouvrage est particulièrement reconnu :</p>
+        
+        <div class="book-card">
+          <div class="book-icon">📖</div>
+          <div class="book-details">
+            <h4>L'opposition : Ces enfants qui vous en font voir de toutes les couleurs</h4>
+            <div class="author">Benoît Hammarrenger, Ph.D. (Pédopsychologue)</div>
+            <p>
+              Ce livre permet de regarder derrière « l'écran de fumée » de la provocation. Il explique comment décoder la vraie cause de l'opposition (anxiété, fatigue, sentiment d'injustice) afin d'agir sur la racine du problème plutôt que de s'épuiser face au symptôme.
+            </p>
+            <a href="https://www.amazon.fr/Lopposition-enfants-vous-toutes-couleurs-ebook/dp/B0CPZBT8PT/" target="_blank" rel="noopener noreferrer" class="btn-action secondary book-amazon-btn">
+              <span>🛒</span> Voir sur Amazon
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parent Reflection Journal -->
+      <section id="carnet-reflection">
+        <span class="section-badge">Journal de bord</span>
+        <h2><span>Mon Espace de Réflexion</span></h2>
+        <p>Le fait de noter par écrit les moments difficiles permet de prendre du recul, de repérer les schémas répétitifs et de préparer ses consultations avec les spécialistes.</p>
+
+        <div class="reflection-container">
+          <h3><span>📝</span> Log des Situations d'Opposition</h3>
+          <form id="log-form" onsubmit="addLogEntry(event)" style="margin-top: 1.5rem;">
+            <div class="form-grid">
+              
+              <div class="form-group">
+                <label for="log-demande"><strong>Type de demande / consigne :</strong></label>
+                <select id="log-demande" class="form-control" required>
+                  <option value="" disabled selected>Choisir une demande...</option>
+                  <option value="Hygiène & Soins (brossage dents, bain, habillage)">🛁 Hygiène & Soins (brossage dents, bain...)</option>
+                  <option value="Transitions & Écrans (arrêter un jeu, quitter la maison)">📱 Transitions & Écrans (écrans, départ...)</option>
+                  <option value="Tâches & Devoirs (devoirs, rangement chambre)">📚 Tâches & Devoirs (devoirs, rangement...)</option>
+                  <option value="Repas & Coucher (venir à table, aller au lit)">🛌 Repas & Coucher (table, coucher...)</option>
+                  <option value="Autre consigne">💬 Autre consigne</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label><strong>Intensité de l'opposition :</strong></label>
+                <div class="intensity-rating">
+                  <label><input type="radio" name="intensity" value="1" required><span>1</span></label>
+                  <label><input type="radio" name="intensity" value="2"><span>2</span></label>
+                  <label><input type="radio" name="intensity" value="3"><span>3</span></label>
+                  <label><input type="radio" name="intensity" value="4"><span>4</span></label>
+                  <label><input type="radio" name="intensity" value="5"><span>5</span></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="log-strategie"><strong>Stratégie appliquée :</strong></label>
+                <select id="log-strategie" class="form-control" required>
+                  <option value="" disabled selected>Choisir une stratégie...</option>
+                  <option value="Choix limité (illusion de contrôle)">💡 Choix limité (illusion de contrôle)</option>
+                  <option value="Renforcement positif (valoriser la coopération)">✨ Renforcement positif</option>
+                  <option value="Ignorer activement les comportements mineurs">🔇 Ignorer activement</option>
+                  <option value="Consigne claire, courte et visuelle">📢 Consigne courte & claire</option>
+                  <option value="Réaction spontanée (conflit / hausse de ton)">⚡ Réaction spontanée / Hausse de ton</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label><strong>Réaction de l'enfant (sélection rapide) :</strong></label>
+                <div class="reaction-tags">
+                  <label class="tag-checkbox"><input type="checkbox" name="reaction" value="🗣️ Crie / Hurle"><span>🗣️ Crie / Hurle</span></label>
+                  <label class="tag-checkbox"><input type="checkbox" name="reaction" value="🚫 Dit 'Non' fermement"><span>🚫 Dit 'Non' fermement</span></label>
+                  <label class="tag-checkbox"><input type="checkbox" name="reaction" value="⏳ Négocie / Argumente"><span>⏳ Négocie / Argumente</span></label>
+                  <label class="tag-checkbox"><input type="checkbox" name="reaction" value="🏃 Fuit / S'en va"><span>🏃 Fuit / S'en va</span></label>
+                  <label class="tag-checkbox"><input type="checkbox" name="reaction" value="🤫 Ignore / Boude"><span>🤫 Ignore / Boude</span></label>
+                </div>
+              </div>
+
+              <!-- Questionnaire contextuel -->
+              <div class="form-group">
+                <label><strong>Comment vous êtes-vous senti(e) ?</strong></label>
+                <div class="reaction-tags">
+                  <label class="tag-checkbox"><input type="radio" name="q-parent" value="calme"><span>😌 Calme</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-parent" value="frustre"><span>😤 Frustré(e)</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-parent" value="depasse"><span>😰 Dépassé(e)</span></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label><strong>La situation a-t-elle été résolue ?</strong></label>
+                <div class="reaction-tags">
+                  <label class="tag-checkbox"><input type="radio" name="q-resolution" value="oui_vite"><span>✅ Oui, rapidement</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-resolution" value="oui_long"><span>⏳ Oui, mais difficilement</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-resolution" value="non"><span>❌ Non, conflict persistant</span></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label><strong>Quel était le contexte ?</strong></label>
+                <div class="reaction-tags">
+                  <label class="tag-checkbox"><input type="radio" name="q-contexte" value="retour_ecole"><span>🎒 Retour école</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-contexte" value="fatigue"><span>😴 Fatigue</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-contexte" value="faim"><span>🍽️ Faim</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-contexte" value="transition"><span>🔄 Transition</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-contexte" value="autre"><span>💬 Autre</span></label>
+                </div>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn-action primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
+              📥 Enregistrer cette situation
+            </button>
+          </form>
+
+          <!-- Log entries list -->
+          <div class="log-history-container" style="margin-top: 2.5rem;">
+            <h4>📋 Historique des situations enregistrées</h4>
+            <div id="log-history-list" class="log-history-list">
+              <!-- Entries will be loaded here dynamically -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre IV : Accompagnement médical et thérapeutique.</p>
+  </footer>
+
+  <script src="app.js?v=1.3.1"></script>
+</body>
+</html>
