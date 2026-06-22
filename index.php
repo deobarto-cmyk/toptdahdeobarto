@@ -99,10 +99,10 @@ include 'includes/nav.php';
           <!-- Card 5 : Synthèse -->
           <div class="portal-card" style="border-top: 3px solid var(--primary); grid-column: 1 / -1;">
             <div class="portal-card-body">
-              <h3>📄 Synthèse complète — Document PDF</h3>
-              <p>Retrouvez l'ensemble du contenu condensé en un document structuré : définitions, témoignages, outils pratiques et sources. Téléchargeable en PDF en un clic.</p>
+              <h3>📄 Synthèse complète</h3>
+              <p>Retrouvez l'ensemble du contenu condensé en un document structuré et optimisé pour la lecture ou l'impression : définitions, témoignages, outils pratiques et sources.</p>
             </div>
-            <a href="synthese" class="portal-link" style="font-size:1rem;">Consulter &amp; télécharger la synthèse →</a>
+            <a href="synthese" class="portal-link" style="font-size:1rem;">Consulter la synthèse →</a>
           </div>
 
         </div>
