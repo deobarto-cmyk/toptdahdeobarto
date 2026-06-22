@@ -5,8 +5,10 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/www/(\S*)\s [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Force HTTPS redirection
+# Force HTTPS redirection (compatible avec le reverse-proxy Alwaysdata, exclut localhost)
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1|::1)$ [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Serve index.php at root by default
