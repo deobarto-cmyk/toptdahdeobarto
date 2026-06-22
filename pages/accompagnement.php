@@ -1,59 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accompagnement Professionnel & Réflexion | deobarto</title>
-  <meta name="description" content="Ressources d'accompagnement médical, groupes de méthode Barkley (PEHP), livre conseillé et carnet d'analyse des conflits.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-</head>
-<body>
+<?php
+$page_title = "Accompagnement Professionnel & Réflexion | deobarto";
+$page_description = "Ressources d'accompagnement médical, groupes de méthode Barkley (PEHP), livre conseillé et carnet d'analyse des conflits.";
+$current_page = "accompagnement";
+$header_tag = "Chapitre IV : Accompagnement médical";
+$header_title = "Prise en Charge & Guidance";
+$header_subtitle = "S'entourer des bons professionnels, pratiquer la méthode Barkley et analyser vos situations au quotidien.";
+$footer_subtitle = "Chapitre IV : Accompagnement médical et thérapeutique.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-    
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Chapitre IV : Suivi & Accompagnement</div>
-      <h1 class="main-title">Prise en Charge Professionnelle</h1>
-      <p class="main-subtitle">
-      S'entourer des bons spécialistes et acquérir des méthodes reconnues scientifiquement.
-    </p>
-    </div>
-    
-
-
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li class="active"><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include '../includes/head.php';
+include '../includes/header.php';
+include '../includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar">
@@ -129,7 +86,7 @@
         </p>
 
         <div class="alert-box" style="margin-top: 1.5rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary);">
-          <strong>💡 Complémentarité médicale essentielle :</strong> Les outils de la guidance parentale sont d'autant plus efficaces lorsqu'ils sont couplés à une prise en charge médicale. Si votre enfant reçoit un traitement médicamenteux pour son TDAH, les comportements d'opposition sont souvent fortement réduits pendant les heures où la molécule fait effet, ce qui ouvre la <strong>fenêtre idéale</strong> pour appliquer vos stratégies éducatives éducatives et ancrer durablement la coopération.
+          <strong>💡 Complémentarité médicale essentielle :</strong> Les outils de la guidance parentale sont d'autant plus efficaces lorsqu'ils sont couplés à une prise en charge médicale. Si votre enfant reçoit un traitement médicamenteux pour son TDAH, les comportements d'opposition sont souvent fortement réduits pendant les heures où la molécule fait effet, ce qui ouvre la <strong>fenêtre idéale</strong> pour appliquer vos stratégies éducatives et ancrer durablement la coopération.
         </div>
 
         <!-- Interactive Department Selector -->
@@ -251,7 +208,7 @@
                 <div class="reaction-tags">
                   <label class="tag-checkbox"><input type="radio" name="q-resolution" value="oui_vite"><span>✅ Oui, rapidement</span></label>
                   <label class="tag-checkbox"><input type="radio" name="q-resolution" value="oui_long"><span>⏳ Oui, mais difficilement</span></label>
-                  <label class="tag-checkbox"><input type="radio" name="q-resolution" value="non"><span>❌ Non, conflict persistant</span></label>
+                  <label class="tag-checkbox"><input type="radio" name="q-resolution" value="non"><span>❌ Non, conflit persistant</span></label>
                 </div>
               </div>
 
@@ -287,15 +244,6 @@
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre IV : Accompagnement médical et thérapeutique.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include '../includes/footer.php';
+?>

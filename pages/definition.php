@@ -1,55 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comprendre le TOP & TDAH | deobarto</title>
-  <meta name="description" content="Définitions cliniques, critères du DSM-5, et causes neurologiques du Trouble Oppositionnel avec Provocation (TOP).">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-</head>
-<body>
+<?php
+$page_title = "Comprendre le TOP & TDAH | deobarto";
+$page_description = "Définitions cliniques, critères du DSM-5, et causes neurologiques du Trouble Oppositionnel avec Provocation (TOP).";
+$current_page = "definition";
+$header_tag = "Chapitre I : Définition Clinique";
+$header_title = "Comprendre et Déceler le TOP";
+$header_subtitle = "Décoder les mécanismes neurologiques et comportementaux derrière la résistance active.";
+$footer_subtitle = "Chapitre I : Approche clinique et scientifique.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Chapitre I : Définition Clinique</div>
-      <h1 class="main-title">Comprendre et Déceler le TOP</h1>
-      <p class="main-subtitle">
-      Décoder les mécanismes neurologiques et comportementaux derrière la résistance active.
-      </p>
-    </div>
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li class="active"><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include '../includes/head.php';
+include '../includes/header.php';
+include '../includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar">
@@ -76,7 +37,7 @@
         <ul class="pretty-list">
           <li><strong>Déficit de l'inhibition :</strong> Une immense difficulté à s'arrêter et à réfléchir avant de poser un acte ou de réagir.</li>
           <li><strong>Altération du circuit de la récompense :</strong> L'enfant est peu sensible aux punitions ou aux récompenses à long terme. Il a du mal à anticiper les conséquences de ses actes et vit uniquement dans l'immédiat.</li>
-          <li><strong>Difficulté d'inhibition émotionnelle :</strong> La frustration déclenche une surcharge cognitive immédiate, rendant la colère incontrôlable.</li>
+          <li><strong>Difficulté d'inhibition émotionnelle :</strong> La frustration déclenche une surcharge cognitive immédiate, rendant la colere incontrôlable.</li>
         </ul>
       </section>
 
@@ -416,15 +377,6 @@
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre I : Approche clinique et scientifique.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include '../includes/footer.php';
+?>

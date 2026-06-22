@@ -345,8 +345,8 @@ function highlightActiveNav() {
     const item = link.closest('li');
     item.classList.remove('active');
     
-    // Check if the current URL ends with the link path
-    if (currentPath.endsWith(linkPath) || (currentPath.endsWith('/') && linkPath === 'index.html')) {
+    // Check if the current URL matches the link path
+    if (currentPath === linkPath || (linkPath !== '/' && currentPath.endsWith(linkPath))) {
       item.classList.add('active');
     }
   });

@@ -1,59 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyse des Vidéos & Témoignages | deobarto</title>
-  <meta name="description" content="Synthèse des retours d'expérience de parents et des psychoéducateurs sur les réseaux sociaux concernant le TOP et le TDAH.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-</head>
-<body>
+<?php
+$page_title = "Retours d'Expériences & Témoignages | deobarto";
+$page_description = "Retours d'expériences cliniques et analyses psychoéducatives issus de créateurs spécialisés sur TikTok et perspectives d'avenir.";
+$current_page = "temoignages";
+$header_tag = "Chapitre II : Retours d'expériences";
+$header_title = "Témoignages & Analyse des Sources";
+$header_subtitle = "Décoder le vécu familial et analyser les critiques de ressources en ligne.";
+$footer_subtitle = "Chapitre II : Retours d'expériences et vécus familiaux.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-    
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Chapitre II : Retours d'Expérience</div>
-      <h1 class="main-title">Analyse des Vidéos & Témoignages</h1>
-      <p class="main-subtitle">
-      Écouter le quotidien des parents et s'inspirer des conseils des psychoéducateurs.
-    </p>
-    </div>
-    
-
-
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li class="active"><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include '../includes/head.php';
+include '../includes/header.php';
+include '../includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar">
@@ -192,22 +149,13 @@
         <div class="alert-box" style="background: rgba(13, 148, 136, 0.05); border-color: rgba(13, 148, 136, 0.3); color: var(--text-main);">
           <strong>🕊️ Une lueur d'espoir à long terme :</strong> Bien que le parcours quotidien puisse sembler chaotique, de nombreux témoignages de parents d'anciens enfants TOP rapportent qu'un <strong>apaisement radical survient fréquemment à l'adolescence (vers 15-16 ans)</strong>. 
           <br><br>
-          Avec l'âge et la maturation cérébrale, l'enfant TOP parvient à mieux réguler ses émotions. Il devient fréquemment un adulte respectueux, intelligent, autodidacte et parfaitement inséré dans sa vie professionnelle.
+          Avec l'âge et la maturation cérébrale, l'enfant TOP va s'apaiser. Il devient fréquemment un adulte respectueux, intelligent, autodidacte et parfaitement inséré dans sa vie professionnelle.
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre II : Retours d'expériences et vécus familiaux.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include '../includes/footer.php';
+?>

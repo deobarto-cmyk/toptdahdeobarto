@@ -1,59 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiches Stratégiques au Quotidien | deobarto</title>
-  <meta name="description" content="Outils et stratégies concrètes de renforcement positif et de communication adaptée pour gérer le TOP au quotidien.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-</head>
-<body>
+<?php
+$page_title = "Fiches Stratégiques au Quotidien | deobarto";
+$page_description = "Outils et stratégies concrètes de renforcement positif et de communication adaptée pour gérer le TOP au quotidien.";
+$current_page = "strategies";
+$header_tag = "Chapitre III : Outils pratiques";
+$header_title = "Fiches Stratégiques au Quotidien";
+$header_subtitle = "Techniques de communication et fiches d'action interactives à utiliser chaque jour.";
+$footer_subtitle = "Chapitre III : Outils pratiques et fiches d'action.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-    
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Chapitre III : Outils Pratiques</div>
-      <h1 class="main-title">Fiches Stratégiques au Quotidien</h1>
-      <p class="main-subtitle">
-      Des protocoles concrets et modifiables pour désamorcer les conflits à la maison.
-    </p>
-    </div>
-    
-
-
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li class="active"><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include '../includes/head.php';
+include '../includes/header.php';
+include '../includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar">
@@ -154,15 +111,6 @@
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Chapitre III : Outils pratiques et fiches d'action.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include '../includes/footer.php';
+?>

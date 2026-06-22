@@ -1,85 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comprendre et Gérer le Double Défi : TDAH et TOP | deobarto</title>
-  <meta name="description" content="Synthèse et outils pratiques issus de témoignages et de la recherche psychoéducative sur le Trouble Oppositionnel avec Provocation.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-  <style>
-    /* ===== PDF / Print page-break rules ===== */
-    .pdf-new-page {
-      page-break-before: always;
-      break-before: page;
-    }
-    .pdf-no-break {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    /* Apply no-break to all cards and blocks */
-    .matrix-card, .tiktok-card, .alert-box,
-    .synthese-tool-card, .pretty-list li,
-    h2, h3, h4 {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    /* Keep headings with next element */
-    h2, h3 {
-      page-break-after: avoid;
-      break-after: avoid;
-    }
-  </style>
-</head>
-<body>
+<?php
+$page_title = "Comprendre et Gérer le Double Défi : TDAH et TOP | deobarto";
+$page_description = "Synthèse et outils pratiques issus de témoignages et de la recherche psychoéducative sur le Trouble Oppositionnel avec Provocation.";
+$current_page = "synthese";
+$header_tag = "Document de Synthèse";
+$header_title = "Comprendre et Gérer le Double Défi";
+$header_subtitle = "TDAH & TOP — Synthèse et outils pratiques issus des témoignages et de la recherche psychoéducative.";
+$footer_subtitle = "Document de synthèse éducative — Non médical. Consultez un professionnel de santé pour tout diagnostic.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Document de Synthèse</div>
-      <h1 class="main-title">Comprendre et Gérer le Double Défi</h1>
-      <p class="main-subtitle">
-      TDAH &amp; TOP — Synthèse et outils pratiques issus des témoignages et de la recherche psychoéducative.
-    </p>
-    </div>
-
-    <div class="header-actions" style="margin-top: 1.5rem;">
-      <a href="index.html" class="btn-action secondary">
-        <span>🏠</span> Retour à l'accueil
-      </a>
-    </div>
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li class="active"><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include '../includes/head.php';
+include '../includes/header.php';
+include '../includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar" id="synthese-content">
@@ -170,7 +101,7 @@
 
         <h3><span>💡</span> Démystifier le TOP (Debunking)</h3>
         <ul class="pretty-list">
-          <li><strong>L'éducation n'est pas la cause :</strong> Le TOP est un dysfonctionnement de la régulation de l'humeur. Une fermeté rigide ou sévère aggrave l'opposition en stimulant le système défensif de l'enfant.</li>
+          <li><strong>L'education n'est pas la cause :</strong> Le TOP est un dysfonctionnement de la régulation de l'humeur. Une fermeté rigide ou sévère aggrave l'opposition en stimulant le système défensif de l'enfant.</li>
           <li><strong>Absence de manipulation calculée :</strong> Il s'agit d'une intolérance neurologique aiguë à la frustration et aux transitions. C'est une réaction impulsive et non un calcul malveillant.</li>
           <li><strong>Efficacité du traitement médical :</strong> Traiter le TDAH sous-jacent (médication) régule la dopamine, diminue l'impulsivité et estompe très nettement les comportements de TOP.</li>
           <li><strong>Perspective positive à long terme :</strong> Les symptômes s'atténuent considérablement à l'adolescence grâce à la maturation cérébrale et à une guidance adaptée (type Barkley).</li>
@@ -299,15 +230,6 @@
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP &amp; TDAH</p>
-    <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--text-dark);">Document de synthèse éducative — Non médical. Consultez un professionnel de santé pour tout diagnostic.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include '../includes/footer.php';
+?>

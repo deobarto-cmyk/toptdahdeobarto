@@ -1,60 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portail d'Accompagnement TOP & TDAH | deobarto</title>
-  <meta name="description" content="Portail d'accompagnement parental sur le Trouble Oppositionnel avec Provocation (TOP) et le TDAH. Outils de psychoéducation et stratégies.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1.3.1">
-</head>
-<body>
+<?php
+$page_title = "Portail d'Accompagnement TOP & TDAH | deobarto";
+$page_description = "Portail d'accompagnement parental sur le Trouble Oppositionnel avec Provocation (TOP) et le TDAH. Outils de psychoéducation et stratégies.";
+$current_page = "index";
+$header_tag = "Portail de Psychoéducation";
+$header_title = "TOP & TDAH : Guide d'Accompagnement";
+$header_subtitle = "Un espace ressources pour comprendre, décoder et désamorcer les conflits au quotidien.";
+$footer_subtitle = "Portail de psychoéducation parentale.";
 
-  <!-- Scroll Progress Indicator -->
-  <div id="progress-bar"></div>
-
-  <!-- Header Banner -->
-  <header>
-    <!-- Theme Switcher -->
-    <div class="theme-toggle-container">
-      <button class="btn-toggle-theme" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">🌙</span> <span id="theme-text">Mode Sombre</span>
-      </button>
-    </div>
-    
-    <a href="https://deobarto.alwaysdata.net/" class="header-logo-wrap"><img src="logo.png" alt="Logo deobarto" class="header-logo"></a>
-    <div class="header-content">
-      <div class="header-tag">Portail de Psychoéducation</div>
-      <h1 class="main-title">TOP & TDAH : Guide d'Accompagnement</h1>
-      <p class="main-subtitle">
-      Un espace ressources pour comprendre, décoder et désamorcer les conflits au quotidien.
-    </p>
-    </div>
-    
-
-
-  </header>
-
-  <!-- Sticky Horizontal Navigation -->
-  <nav class="header-nav sticky-nav">
-    <div class="sticky-nav-container">
-      <ul class="nav-horizontal" id="toc-nav">
-        <li class="active"><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="definition.html">🔎 I. Comprendre le TOP</a></li>
-        <li><a href="temoignages.html">📱 II. Analyse des Sources</a></li>
-        <li><a href="strategies.html">🛠️ III. Fiches Stratégiques</a></li>
-        <li><a href="accompagnement.html">🏥 IV. Prise en Charge</a></li>
-        <li><a href="synthese.html">📄 V. Synthèse</a></li>
-      </ul>
-      <div class="search-container horizontal-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="site-search" class="search-input" placeholder="Rechercher...">
-      </div>
-    </div>
-  </nav>
+include 'includes/head.php';
+include 'includes/header.php';
+include 'includes/nav.php';
+?>
 
   <!-- Layout Grid -->
   <div class="container no-sidebar">
@@ -84,7 +40,7 @@
             <p style="font-size:0.88rem; margin-bottom: 1rem;">
               L'enfant n'écoute pas par <strong>oubli</strong>, <strong>distraction</strong> ou <strong>impulsivité</strong>. Il a la volonté d'obéir mais son déficit d'attention l'empêche de suivre les consignes.
             </p>
-            <a href="definition.html#tdah-seul" class="portal-link">En savoir plus →</a>
+            <a href="definition#tdah-seul" class="portal-link">En savoir plus →</a>
           </div>
           
           <div class="matrix-card" style="border-top: 4px solid var(--primary);">
@@ -92,7 +48,7 @@
             <p style="font-size:0.88rem; margin-bottom: 1rem;">
               L'enfant manifeste une <strong>résistance active, répétée et intentionnelle</strong> face aux règles et aux figures d'autorité. Il cherche à tester les limites délibérément.
             </p>
-            <a href="definition.html#tdah-top" class="portal-link">En savoir plus →</a>
+            <a href="definition#tdah-top" class="portal-link">En savoir plus →</a>
           </div>
         </div>
       </section>
@@ -110,7 +66,7 @@
               <h3>Comprendre le TOP</h3>
               <p>Découvrez les définitions cliniques (DSM-5), les signes d'alerte, l'explication neurologique et la vigilance diagnostique.</p>
             </div>
-            <a href="definition.html" class="portal-link">Accéder au chapitre →</a>
+            <a href="definition" class="portal-link">Accéder au chapitre →</a>
           </div>
 
           <!-- Card 2 -->
@@ -119,7 +75,7 @@
               <h3>Analyse des Sources</h3>
               <p>Retours d'expérience cliniques et analyses psychoéducatives issus de créateurs spécialisés sur TikTok et perspectives d'avenir.</p>
             </div>
-            <a href="temoignages.html" class="portal-link">Accéder au chapitre →</a>
+            <a href="temoignages" class="portal-link">Accéder au chapitre →</a>
           </div>
 
           <!-- Card 3 -->
@@ -128,7 +84,7 @@
               <h3>Fiches Stratégiques</h3>
               <p>Outils pratiques interactifs pour le quotidien : techniques d'hyperfocus, renforcement positif, et communication modifiée.</p>
             </div>
-            <a href="strategies.html" class="portal-link">Accéder au chapitre →</a>
+            <a href="strategies" class="portal-link">Accéder au chapitre →</a>
           </div>
 
           <!-- Card 4 -->
@@ -137,6 +93,7 @@
               <h3>Prise en Charge</h3>
               <p>Accompagnement médical et thérapeutique, méthode Barkley, livres recommandés et carnet de réflexion parentale.</p>
             </div>
+            <a href="accompagnement" class="portal-link">Accéder au chapitre →</a>
           </div>
 
           <!-- Card 5 : Synthèse -->
@@ -145,7 +102,7 @@
               <h3>📄 Synthèse complète — Document PDF</h3>
               <p>Retrouvez l'ensemble du contenu condensé en un document structuré : définitions, témoignages, outils pratiques et sources. Téléchargeable en PDF en un clic.</p>
             </div>
-            <a href="synthese.html" class="portal-link" style="font-size:1rem;">Consulter &amp; télécharger la synthèse →</a>
+            <a href="synthese" class="portal-link" style="font-size:1rem;">Consulter &amp; télécharger la synthèse →</a>
           </div>
 
         </div>
@@ -154,15 +111,6 @@
     </main>
   </div>
 
-  <!-- Back to Top -->
-  <button id="btn-back-to-top" class="back-to-top" title="Retour en haut">▲</button>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 deobarto - Comprendre et Accompagner le TOP & TDAH</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);">Portail de psychoéducation parentale.</p>
-  </footer>
-
-  <script src="app.js?v=1.3.1"></script>
-</body>
-</html>
+<?php
+include 'includes/footer.php';
+?>
