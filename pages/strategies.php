@@ -27,9 +27,9 @@ if ($lang === 'en') {
     $footer_subtitle = "Chapitre III : Outils pratiques et fiches d'action.";
 }
 
-include '../includes/head.php';
-include '../includes/header.php';
-include '../includes/nav.php';
+include __DIR__ . '/../includes/head.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/nav.php';
 ?>
 
   <!-- Layout Grid -->
@@ -322,5 +322,5 @@ include '../includes/nav.php';
   </div>
 
 <?php
-include '../includes/footer.php';
+include __DIR__ . '/../includes/footer.php';
 ?>

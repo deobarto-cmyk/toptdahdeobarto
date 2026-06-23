@@ -27,9 +27,9 @@ if ($lang === 'en') {
     $footer_subtitle = "Document de synthèse éducative — Non médical. Consultez un professionnel de santé pour tout diagnostic.";
 }
 
-include '../includes/head.php';
-include '../includes/header.php';
-include '../includes/nav.php';
+include __DIR__ . '/../includes/head.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/nav.php';
 ?>
 
   <!-- Layout Grid -->
@@ -664,5 +664,5 @@ include '../includes/nav.php';
   </div>
 
 <?php
-include '../includes/footer.php';
+include __DIR__ . '/../includes/footer.php';
 ?>
