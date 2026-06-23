@@ -4,7 +4,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Florian Laude - parent - <?php echo $lang === 'en' ? 'Understanding & Supporting ODD & ADHD' : ($lang === 'ro' ? 'Înțelegerea și Ghidarea TOP & TDAH' : 'Comprendre et Accompagner le TOP & TDAH'); ?></p>
+    <p>© 2026 Florian Laude  - <?php echo $lang === 'en' ? 'Understanding & Supporting ODD & ADHD' : ($lang === 'ro' ? 'Înțelegerea și Ghidarea TOP & TDAH' : 'Comprendre et Accompagner le TOP & TDAH'); ?></p>
     <?php if (isset($footer_subtitle) && $footer_subtitle !== ''): ?>
       <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-dark);"><?php echo $footer_subtitle; ?></p>
     <?php endif; ?>
