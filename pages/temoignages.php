@@ -2,24 +2,24 @@
 include_once __DIR__ . '/../includes/lang.php';
 
 if ($lang === 'en') {
-    $page_title = "Experience Feedback & Testimonials | deobarto";
-    $page_description = "Clinical feedback and psychoeducational analysis from specialized creators on TikTok and future prospects.";
+    $page_title = "ADHD and ODD Testimonials: Stories from Families";
+    $page_description = "Discover inspiring stories from families and professionals dealing with ODD and ADHD on a daily basis. Share your experience.";
     $current_page = "temoignages";
     $header_tag = "Chapter II: Testimonials & Experiences";
     $header_title = "Testimonials & Source Analysis";
     $header_subtitle = "Decoding family experiences and analyzing critical online resources.";
     $footer_subtitle = "Chapter II: Experience feedback and family life experiences.";
 } elseif ($lang === 'ro') {
-    $page_title = "Feedback din Experiență și Mărturii | deobarto";
-    $page_description = "Feedback clinic și analize psihoeducaționale de la creatori specializați pe TikTok și perspective de viitor.";
+    $page_title = "Mărturii TDAH și TOP: Povești de la Familii și Specialiști";
+    $page_description = "Descoperă povești inspiraționale de la familii și specialiști care gestionează zilnic TOP și TDAH. Împărtășește-ți experiența.";
     $current_page = "temoignages";
     $header_tag = "Capitolul II: Mărturii și Experiențe";
     $header_title = "Mărturii și Analiza Surselor";
     $header_subtitle = "Decodificarea experiențelor familiale și analiza critică a resurselor online.";
     $footer_subtitle = "Capitolul II: Feedback din experiență și experiențe de viață de familie.";
 } else {
-    $page_title = "Retours d'Expériences & Témoignages | deobarto";
-    $page_description = "Retours d'expériences cliniques et analyses psychoéducatives issus de créateurs spécialisés sur TikTok et perspectives d'avenir.";
+    $page_title = "Témoignages TDAH & TOP : Histoires de Parents et Pros";
+    $page_description = "Découvre les récits inspirants de familles et de professionnels qui surmontent le TOP et le TDAH au quotidien. Partage ton vécu.";
     $current_page = "temoignages";
     $header_tag = "Chapitre II : Retours d'expériences";
     $header_title = "Témoignages & Analyse des Sources";
@@ -37,6 +37,20 @@ include '../includes/nav.php';
 
     <!-- Main Content -->
     <main>
+      
+      <!-- E-E-A-T Reassurance Banner -->
+      <div class="alert-box" style="margin-bottom: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 12px; font-size: 0.88rem; display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 1.5rem;">💬</span>
+        <div>
+          <?php if ($lang === 'en'): ?>
+            <strong>Shared experiences:</strong> The testimonies on this page are unique family narratives. They are for peer support only and do not replace individual medical advice.
+          <?php elseif ($lang === 'ro'): ?>
+            <strong>Experiențe împărtășite:</strong> Mărturiile de pe această pagină sunt relatări unice ale familiilor. Acestea au doar scop de sprijin reciproc și nu înlocuiesc sfaturile medicale individuale.
+          <?php else: ?>
+            <strong>Expériences partagées :</strong> Les témoignages présentés sur cette page sont des récits de vie uniques. Ils ont une valeur d'entraide entre pairs et ne remplacent pas un avis médical individualisé.
+          <?php endif; ?>
+        </div>
+      </div>
       
       <section id="tiktok-videos">
         <?php if ($lang === 'en'): ?>

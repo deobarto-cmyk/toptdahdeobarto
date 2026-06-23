@@ -2,26 +2,27 @@
 include_once __DIR__ . '/../includes/lang.php';
 
 if ($lang === 'en') {
-    $page_title = "Professional Support & Reflection | deobarto";
-    $page_description = "Medical support resources, Barkley method groups (PEHP), recommended book, and conflict analysis journal.";
+    $page_title = "Supporting ODD and ADHD: Barkley Method & CBT";
+    $page_description = "Discover parental guidance through the Barkley method and CBT techniques to effectively support a child with ODD and ADHD.";
     $current_page = "accompagnement";
     $header_tag = "Chapter IV: Medical Support";
     $header_title = "Support & Parental Guidance";
     $header_subtitle = "Surrounding yourself with the right professionals, practicing the Barkley method, and analyzing daily situations.";
     $footer_subtitle = "Chapter IV: Medical and therapeutic support.";
 } elseif ($lang === 'ro') {
-    $page_title = "Sprijin Profesional și Reflecție | deobarto";
-    $page_description = "Resurse de asistență medicală, grupuri pentru metoda Barkley (PEHP), carte recomandată și jurnal de analiză a conflictelor.";
+    $page_title = "Sprijinirea TOP și TDAH: Metoda Barkley și TCC";
+    $page_description = "Descoperă ghidarea parentală prin metoda Barkley și tehnici TCC pentru a sprijini eficient un copil cu TOP și TDAH.";
     $current_page = "accompagnement";
     $header_tag = "Capitolul IV: Sprijin Medical";
     $header_title = "Asistență și Ghidare Parentală";
     $header_subtitle = "Cum să vă înconjurați de profesioniștii potriviți, să practicați metoda Barkley și să analizați situațiile zilnice.";
     $footer_subtitle = "Capitolul IV: Sprijin medical și terapeutic.";
 } else {
-    $page_title = "Accompagnement Professionnel & Réflexion | deobarto";
-    $page_description = "Ressources d'accompagnement médical, groupes de méthode Barkley (PEHP), livre conseillé et carnet d'analyse des conflits.";
+    $page_title = "Accompagner le TOP et le TDAH : Méthode Barkley & TCC";
+    $page_description = "Découvre la guidance parentale avec la méthode Barkley et l'impact des TCC pour accompagner efficacement un enfant TDAH ou TOP.";
     $current_page = "accompagnement";
     $header_tag = "Chapitre IV : Accompagnement médical";
+    $page_title = "Accompagner le TOP et le TDAH : Méthode Barkley & TCC";
     $header_title = "Prise en Charge & Guidance";
     $header_subtitle = "S'entourer des bons professionnels, pratiquer la méthode Barkley et analyser vos situations au quotidien.";
     $footer_subtitle = "Chapitre IV : Accompagnement médical et thérapeutique.";
@@ -37,6 +38,20 @@ include '../includes/nav.php';
 
     <!-- Main Content -->
     <main>
+      
+      <!-- E-E-A-T Reassurance Banner -->
+      <div class="alert-box" style="margin-bottom: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 12px; font-size: 0.88rem; display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 1.5rem;">🩺</span>
+        <div>
+          <?php if ($lang === 'en'): ?>
+            <strong>Therapeutic complement:</strong> The psychoeducational programs and tools presented on this page are based on international guidelines (Barkley, CBT) recommended by health authorities such as the **HAS** for the treatment of ADHD and conduct disorders.
+          <?php elseif ($lang === 'ro'): ?>
+            <strong>Complement terapeutic:</strong> Programele și instrumentele psihoeducaționale prezentate pe această pagină se bazează pe ghidurile internaționale (Barkley, TCC) recomandate de autoritățile de sănătate (precum **HAS**) pentru tratamentul TDAH și al tulburărilor de conduită.
+          <?php else: ?>
+            <strong>Complément thérapeutique :</strong> Les programmes et outils psychoéducatifs présentés sur cette page s'appuient sur les recommandations internationales (Barkley, TCC) validées par les autorités de santé (comme la **HAS**) dans la prise en charge du TDAH et des troubles du comportement.
+          <?php endif; ?>
+        </div>
+      </div>
       
       <section id="professionnels-suivi">
         <?php if ($lang === 'en'): ?>

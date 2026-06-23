@@ -2,24 +2,24 @@
 include_once __DIR__ . '/../includes/lang.php';
 
 if ($lang === 'en') {
-    $page_title = "Understanding & Managing the Dual Diagnosis: ADHD and ODD | deobarto";
-    $page_description = "Synthesis and practical tools from testimonials and psychoeducational research on Oppositional Defiant Disorder.";
+    $page_title = "ODD & ADHD Synthesis Tools: Free PDF Download";
+    $page_description = "Download our free practical synthesis sheets, visual routines, and behavioral assessment tools for ODD and ADHD.";
     $current_page = "synthese";
     $header_tag = "Synthesis Document";
     $header_title = "Understanding & Managing the Dual Diagnosis";
     $header_subtitle = "ADHD & ODD — Synthesis and practical tools from testimonials and psychoeducational research.";
     $footer_subtitle = "Educational synthesis document — Non-medical. Consult a health professional for any diagnosis.";
 } elseif ($lang === 'ro') {
-    $page_title = "Înțelegerea și Gestionarea Diagnosticului Dublu: TDAH și TOP | deobarto";
-    $page_description = "Sinteză și instrumente practice din mărturii și cercetări psihoeducaționale privind Tulburarea de Opoziție și Provocare.";
+    $page_title = "Instrumente de Sinteză TOP și TDAH: Descărcare Gratuită PDF";
+    $page_description = "Descarcă fișele noastre de sinteză practică, rutinele vizuale și instrumentele de evaluare a comportamentului pentru TOP și TDAH.";
     $current_page = "synthese";
     $header_tag = "Document de Sinteză";
     $header_title = "Înțelegerea și Gestionarea Diagnosticului Dublu";
     $header_subtitle = "TDAH și TOP — Sinteză și instrumente practice din mărturii și cercetări psihoeducaționale.";
     $footer_subtitle = "Document de sinteză educațională — Non-medical. Consultați un profesionist din domeniul sănătății pentru orice diagnostic.";
 } else {
-    $page_title = "Comprendre et Gérer le Double Défi : TDAH et TOP | deobarto";
-    $page_description = "Synthèse et outils pratiques issus de témoignages et de la recherche psychoéducative sur le Trouble Oppositionnel avec Provocation.";
+    $page_title = "Outils & Fiches de Synthèse TOP / TDAH à Télécharger";
+    $page_description = "Télécharge nos fiches de synthèse pratiques, routines visuelles et outils d'évaluation comportementale pour le TOP et le TDAH.";
     $current_page = "synthese";
     $header_tag = "Document de Synthèse";
     $header_title = "Comprendre et Gérer le Double Défi";
@@ -35,7 +35,21 @@ include '../includes/nav.php';
   <!-- Layout Grid -->
   <div class="container no-sidebar" id="synthese-content">
     <main>
-
+      
+      <!-- E-E-A-T Reassurance Banner -->
+      <div class="alert-box" style="margin-bottom: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 12px; font-size: 0.88rem; display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 1.5rem;">📚</span>
+        <div>
+          <?php if ($lang === 'en'): ?>
+            <strong>Educational resource:</strong> The summaries and assessment sheets below are compiled from clinical studies, guides from health associations (HyperSupers TDAH France), and professional experience.
+          <?php elseif ($lang === 'ro'): ?>
+            <strong>Resursă educațională:</strong> Rezumatele și fișele de evaluare de mai jos sunt compilate din studii clinice, ghiduri de la asociații de sănătate (HyperSupers TDAH France) și experiență profesională.
+          <?php else: ?>
+            <strong>Ressource éducative :</strong> Les synthèses et fiches d'évaluation ci-dessous sont compilées sur la base d'études cliniques, de guides d'associations de santé (comme HyperSupers TDAH France) et de retours d'expérience.
+          <?php endif; ?>
+        </div>
+      </div>
+      
       <!-- Introduction -->
       <section id="intro">
         <?php if ($lang === 'en'): ?>

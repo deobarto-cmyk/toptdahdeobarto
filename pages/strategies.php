@@ -2,24 +2,24 @@
 include_once __DIR__ . '/../includes/lang.php';
 
 if ($lang === 'en') {
-    $page_title = "Strategy Sheets for Daily Life | deobarto";
-    $page_description = "Concrete tools and strategies of positive reinforcement and modified communication to manage ODD in daily life.";
+    $page_title = "ADHD and ODD: 10 Practical Daily Strategies";
+    $page_description = "Visual routines, limited choices, anger management: apply our psychoeducational strategies to defuse oppositional behaviors.";
     $current_page = "strategies";
     $header_tag = "Chapter III: Practical Tools";
     $header_title = "Strategy Sheets for Daily Life";
     $header_subtitle = "Communication techniques and interactive action sheets to use every day.";
     $footer_subtitle = "Chapter III: Practical tools and action sheets.";
 } elseif ($lang === 'ro') {
-    $page_title = "Fișe Strategice pentru Viața de Zi cu Zi | deobarto";
-    $page_description = "Instrumente și strategii concrete de consolidare pozitivă și comunicare adaptată pentru gestionarea TOP în viața de zi cu zi.";
+    $page_title = "TDAH și TOP: 10 Strategii Practice pentru Viața de Zi cu Zi";
+    $page_description = "Rutine vizuale, alegeri limitate, gestionarea furiei: aplică strategiile noastre psihoeducaționale pentru a dezamorsa opoziția.";
     $current_page = "strategies";
     $header_tag = "Capitolul III: Instrumente Practice";
     $header_title = "Fișe Strategice pentru Viața de Zi cu Zi";
     $header_subtitle = "Tehnici de comunicare și fișe de acțiune interactive de utilizat în fiecare zi.";
     $footer_subtitle = "Capitolul III: Instrumente practice și fișe de acțiune.";
 } else {
-    $page_title = "Fiches Stratégiques au Quotidien | deobarto";
-    $page_description = "Outils et stratégies concrètes de renforcement positif et de communication adaptée pour gérer le TOP au quotidien.";
+    $page_title = "TDAH et TOP : 10 Stratégies Pratiques au Quotidien";
+    $page_description = "Routines visuelles, choix illusoires, gestion des colères : applique nos stratégies psychoéducatives pour désamorcer l'opposition.";
     $current_page = "strategies";
     $header_tag = "Chapitre III : Outils pratiques";
     $header_title = "Fiches Stratégiques au Quotidien";
@@ -37,6 +37,20 @@ include '../includes/nav.php';
 
     <!-- Main Content -->
     <main>
+      
+      <!-- E-E-A-T Reassurance Banner -->
+      <div class="alert-box" style="margin-bottom: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 12px; font-size: 0.88rem; display: flex; align-items: center; gap: 0.75rem;">
+        <span style="font-size: 1.5rem;">💡</span>
+        <div>
+          <?php if ($lang === 'en'): ?>
+            <strong>Practical guidance:</strong> The behavioral tips and communication templates below are adapted from psychoeducational protocols used in occupational therapy and specialized parenting support.
+          <?php elseif ($lang === 'ro'): ?>
+            <strong>Îndrumare practică:</strong> Sfaturile comportamentale și șabloanele de comunicare de mai jos sunt adaptate din protocoalele psihoeducaționale utilizate în terapia ocupațională și sprijinul parental specializat.
+          <?php else: ?>
+            <strong>Conseils pratiques :</strong> Les conseils comportementaux et modèles de communication ci-dessous sont adaptés des protocoles psychoéducatifs appliqués en ergothérapie et en éducation spécialisée.
+          <?php endif; ?>
+        </div>
+      </div>
       
       <section id="communication-rules">
         <?php if ($lang === 'en'): ?>

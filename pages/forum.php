@@ -42,22 +42,22 @@ try {
 }
 
 if ($lang === 'en') {
-    $page_title = "Parental Exchange Forum | ODD & ADHD Portal";
-    $page_description = "A space to exchange, ask questions, and share advice about ODD and ADHD.";
+    $page_title = "ODD & ADHD Forum: Parental Support Community";
+    $page_description = "Join our supportive community to exchange, ask questions, and find help regarding ODD and ADHD.";
     $current_page = "forum";
     $header_tag = "Exchange Space";
     $header_title = "Parental Forum";
     $header_subtitle = "Ask your questions, share your advice, and connect with other parents.";
 } elseif ($lang === 'ro') {
-    $page_title = "Forum de Schimb Parental | TOP & TDAH";
-    $page_description = "Un spațiu pentru a schimba idei, a pune întrebări și a împărtăși sfaturi despre TOP și TDAH.";
+    $page_title = "Forum TDAH și TOP: Comunitate de Sprijin Parental";
+    $page_description = "Alătură-te comunității noastre pentru a schimba idei, a pune întrebări și a găsi sprijin în fața TOP și TDAH.";
     $current_page = "forum";
     $header_tag = "Spațiu de Schimb";
     $header_title = "Forum Parental";
     $header_subtitle = "Pune întrebări, împărtășește sfaturi și conectează-te cu alți părinți.";
 } else {
-    $page_title = "Forum d'Échange Parental | Portail TOP & TDAH";
-    $page_description = "Un espace d'échange pour poser vos questions, répondre et partager des conseils sur le TOP et le TDAH.";
+    $page_title = "Forum TDAH & TOP : Espace d'Entraide pour les Parents";
+    $page_description = "Rejoins notre communauté bienveillante pour échanger, poser tes questions et trouver du soutien face au TOP et au TDAH.";
     $current_page = "forum";
     $header_tag = "Espace d'Échange";
     $header_title = "Forum des Parents";
@@ -71,6 +71,20 @@ include __DIR__ . '/../includes/nav.php';
 
 <div class="container no-sidebar">
   <main class="forum-layout">
+    
+    <!-- E-E-A-T Reassurance Banner -->
+    <div class="alert-box" style="margin-bottom: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 1px solid rgba(var(--primary-rgb), 0.2); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 12px; font-size: 0.88rem; display: flex; align-items: center; gap: 0.75rem;">
+      <span style="font-size: 1.5rem;">🤝</span>
+      <div>
+        <?php if ($lang === 'en'): ?>
+          <strong>Support space:</strong> This forum is a peer-to-peer exchange community. The advice shared by users is based on personal experience and does not replace medical consultation.
+        <?php elseif ($lang === 'ro'): ?>
+          <strong>Spațiu de sprijin:</strong> Acest forum este o comunitate de schimb de experiențe. Sfaturile utilizatorilor se bazează pe experiențe personale și nu înlocuiesc o consultație medicală.
+        <?php else: ?>
+          <strong>Espace de soutien :</strong> Ce forum est une communauté d'entraide entre pairs. Les conseils partagés par les utilisateurs découlent de retours d'expérience et ne remplacent pas une consultation médicale.
+        <?php endif; ?>
+      </div>
+    </div>
 
     <!-- Top Action Bar -->
     <div class="forum-action-bar">
