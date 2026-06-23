@@ -21,7 +21,7 @@ if ($lang === 'en') {
     $ogLocale = 'ro_RO';
 }
 
-$defaultTitle = "Portail d'Accompagnement TOP & TDAH | deobarto";
+$defaultTitle = "Portail d'Accompagnement TOP & TDAH | Florian Laude";
 $defaultDesc = "Portail de psychoéducation pour le Trouble Oppositionnel avec Provocation (TOP) et le TDAH. Conseils, stratégies et forum d'échange.";
 
 $title = isset($page_title) ? $page_title : $defaultTitle;

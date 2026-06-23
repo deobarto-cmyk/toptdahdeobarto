@@ -2,7 +2,7 @@
 include_once 'includes/lang.php';
 
 if ($lang === 'en') {
-    $page_title = "ODD & ADHD Support Portal | deobarto";
+    $page_title = "ODD & ADHD Support Portal | Florian Laude";
     $page_description = "Parental support portal for Oppositional Defiant Disorder (ODD) and ADHD. Psychoeducation tools and strategies.";
     $current_page = "index";
     $header_tag = "Psychoeducation Portal";
@@ -10,7 +10,7 @@ if ($lang === 'en') {
     $header_subtitle = "A resource space to understand, decode, and defuse everyday conflicts.";
     $footer_subtitle = "Parental psychoeducation portal.";
 } elseif ($lang === 'ro') {
-    $page_title = "Portal de Suport TOP & TDAH | deobarto";
+    $page_title = "Portal de Suport TOP & TDAH | Florian Laude";
     $page_description = "Portal de suport parental pentru Tulburarea de Opoziție și Provocare (TOP) și TDAH. Instrumente de psihoeducație și strategii.";
     $current_page = "index";
     $header_tag = "Portal de Psihoeducație";
@@ -18,7 +18,7 @@ if ($lang === 'en') {
     $header_subtitle = "Un spațiu de resurse pentru a înțelege, decoda și dezamorsa conflictele de zi cu zi.";
     $footer_subtitle = "Portal de psihoeducație parentală.";
 } else {
-    $page_title = "Portail d'Accompagnement TOP & TDAH | deobarto";
+    $page_title = "Portail d'Accompagnement TOP & TDAH | Florian Laude";
     $page_description = "Portail d'accompagnement parental sur le Trouble Oppositionnel avec Provocation (TOP) et le TDAH. Outils de psychoéducation et stratégies.";
     $current_page = "index";
     $header_tag = "Portail de Psychoéducation";
