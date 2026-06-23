@@ -1,80 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Page d'accueil -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://top-and-tdah.eu/</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Définition -->
   <url>
     <loc>https://top-and-tdah.eu/definition</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/definition"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/definition?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/definition?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/definition"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Accompagnement -->
   <url>
     <loc>https://top-and-tdah.eu/accompagnement</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/accompagnement"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/accompagnement?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/accompagnement?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/accompagnement"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Stratégies -->
   <url>
     <loc>https://top-and-tdah.eu/strategies</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/strategies"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/strategies?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/strategies?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/strategies"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Synthèse -->
   <url>
     <loc>https://top-and-tdah.eu/synthese</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/synthese"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/synthese?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/synthese?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/synthese"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Témoignages -->
   <url>
     <loc>https://top-and-tdah.eu/temoignages</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/temoignages"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/temoignages?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/temoignages?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/temoignages"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Forum -->
   <url>
     <loc>https://top-and-tdah.eu/forum</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://top-and-tdah.eu/forum"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://top-and-tdah.eu/forum?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://top-and-tdah.eu/forum?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://top-and-tdah.eu/forum"/>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
