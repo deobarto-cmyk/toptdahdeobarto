@@ -1,3 +1,4 @@
+
   <!-- Back to Top -->
   <button id="btn-back-to-top" class="back-to-top" title="<?php echo $lang === 'en' ? 'Back to top' : ($lang === 'ro' ? 'Înapoi sus' : 'Retour en haut'); ?>">▲</button>
 
@@ -9,6 +10,7 @@
     <?php endif; ?>
   </footer>
 
-  <script src="/app.js?v=1.3.1"></script>
+
+  <script src="/js/main.js?v=1.3.1"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@
       </button>
     </div>
     
-    <a href="/" class="header-logo-wrap"><img src="/img/logo.png" alt="Logo deobarto" class="header-logo"></a>
+    <a href="/" class="header-logo-wrap"><img src="/assets/images/logo.png" alt="Logo deobarto" class="header-logo"></a>
     <div class="header-content">
       <div class="header-tag"><?php echo isset($header_tag) ? $header_tag : ''; ?></div>
       <h1 class="main-title"><?php echo isset($header_title) ? $header_title : ''; ?></h1>

@@ -23,8 +23,15 @@ RewriteCond %{THE_REQUEST} \s/pages/(.+?)\.(php|html)[\s?] [NC]
 RewriteRule ^pages/(.+?)\.(php|html)$ /$1 [R=301,L]
 
 # Redirect requests with extension (.html or .php) directly at root to clean URL
+RewriteCond %{REQUEST_URI} !^/api/ [NC]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.(html|php)[\s?] [NC]
 RewriteRule ^(.+?)\.(html|php)$ /$1 [R=301,L]
+
+# Rewrite clean URLs for api directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/api/$1.php -f
+RewriteRule ^api/([^/]+)$ api/$1.php [L]
 
 # 2. Internally rewrite clean URL to .php file in the pages/ directory
 RewriteCond %{REQUEST_FILENAME} !-f

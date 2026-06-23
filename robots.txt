@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://top-and-tdah.eu/sitemap.xml
