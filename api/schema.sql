@@ -39,3 +39,17 @@ CREATE TABLE IF NOT EXISTS `forum_answers` (
   INDEX `idx_user_answers` (`user_id`),
   INDEX `idx_created_answers` (`created_at` ASC)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table pour le planning interactif d'Ewan et Florian
+CREATE TABLE IF NOT EXISTS `planning_tasks` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `date` DATE NOT NULL,
+  `person` ENUM('ewan', 'florian') NOT NULL,
+  `task_text` VARCHAR(255) NOT NULL,
+  `is_checked` TINYINT(1) DEFAULT 0,
+  `is_custom` TINYINT(1) DEFAULT 0,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY `idx_date_person_task` (`date`, `person`, `task_text`),
+  INDEX `idx_date` (`date`),
+  INDEX `idx_date_person` (`date`, `person`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

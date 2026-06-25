@@ -1,9 +1,9 @@
 <?php
 include_once __DIR__ . '/../includes/lang.php';
 
-// Si déjà connecté, redirection vers le forum
+// Si déjà connecté, redirection vers l'accueil
 if (isset($_SESSION['user_id'])) {
-    header('Location: /forum');
+    header('Location: /');
     exit;
 }
 

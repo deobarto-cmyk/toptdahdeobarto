@@ -1,30 +1,62 @@
 <?php
+/**
+ * index.php - Tableau de bord familial d'accueil (Ewan & Florian)
+ */
+
 include_once 'includes/lang.php';
 
+// Détermination des textes selon la langue
 if ($lang === 'en') {
-    $page_title = "ODD & ADHD Support Portal | Florian Laude";
-    $page_description = "Parental support portal for Oppositional Defiant Disorder (ODD) and ADHD. Psychoeducation tools and strategies.";
+    $page_title = "Family Dashboard | Routine Portal";
+    $page_description = "Private family portal and daily routine tracker for Ewan and Florian.";
     $current_page = "index";
-    $header_tag = "Psychoeducation Portal";
-    $header_title = "ODD & ADHD: Supporting Guide";
-    $header_subtitle = "A resource space to understand, decode, and defuse everyday conflicts.";
-    $footer_subtitle = "Parental psychoeducation portal.";
+    $header_tag = "Private Portal";
+    $header_title = "The Family Portal";
+    $header_subtitle = "Welcome to your personal space. Organize your days and track routines together.";
+    
+    // Traductions de la page
+    $txt_welcome = "Hello Laude Family!";
+    $txt_intro = "Here is the summary of your routines for today. Make sure to complete your tasks and synchronise them.";
+    $txt_today_tasks = "Today's Tasks";
+    $txt_completed = "completed";
+    $txt_badge_together = "Together";
+    $txt_badge_custom = "Custom";
+    $txt_open_planning = "📅 Open Weekly Schedule";
+    $txt_no_tasks = "No tasks planned for today. Enjoy your day! ✨";
 } elseif ($lang === 'ro') {
-    $page_title = "Portal de Suport TOP & TDAH | Florian Laude";
-    $page_description = "Portal de suport parental pentru Tulburarea de Opoziție și Provocare (TOP) și TDAH. Instrumente de psihoeducație și strategii.";
+    $page_title = "Tablou de bord familial | Portal de rutină";
+    $page_description = "Portal privat de familie și monitorizare a rutinei zilnice pentru Ewan și Florian.";
     $current_page = "index";
-    $header_tag = "Portal de Psihoeducație";
-    $header_title = "TOP & TDAH: Ghid de Însoțire";
-    $header_subtitle = "Un spațiu de resurse pentru a înțelege, decoda și dezamorsa conflictele de zi cu zi.";
-    $footer_subtitle = "Portal de psihoeducație parentală.";
-} else {
-    $page_title = "Portail d'Accompagnement TOP & TDAH | Florian Laude";
-    $page_description = "Portail d'accompagnement parental sur le Trouble Oppositionnel avec Provocation (TOP) et le TDAH. Outils de psychoéducation et stratégies.";
+    $header_tag = "Portal Privat";
+    $header_title = "Portalul Familiei";
+    $header_subtitle = "Bun venit în spațiul vostru personal. Organizați-vă zilele și urmăriți rutinele împreună.";
+    
+    // Traductions de la page
+    $txt_welcome = "Salutare, Familia Laude!";
+    $txt_intro = "Iată rezumatul rutinelor voastre pentru astăzi. Asigurați-vă că vă finalizați sarcinile și le sincronizați.";
+    $txt_today_tasks = "Sarcinile de astăzi";
+    $txt_completed = "finalizate";
+    $txt_badge_together = "Împreună";
+    $txt_badge_custom = "Perso";
+    $txt_open_planning = "📅 Deschide Programul Săptămânal";
+    $txt_no_tasks = "Nicio sarcină planificată pentru astăzi. O zi frumoasă! ✨";
+} else { // Français par défaut
+    $page_title = "Tableau de Bord Familial | Portail Routine";
+    $page_description = "Portail familial privé et suivi de la routine quotidienne pour Ewan et Florian.";
     $current_page = "index";
-    $header_tag = "Portail de Psychoéducation";
-    $header_title = "TOP & TDAH : Guide d'Accompagnement";
-    $header_subtitle = "Un espace ressources pour comprendre, décoder et désamorcer les conflits au quotidien.";
-    $footer_subtitle = "Portail de psychoéducation parentale.";
+    $header_tag = "Portail Privé";
+    $header_title = "Le Portail Familial";
+    $header_subtitle = "Bienvenue dans votre espace personnel. Organisez vos journées et suivez vos routines ensemble.";
+    
+    // Traductions de la page
+    $txt_welcome = "Bonjour la Famille Laude !";
+    $txt_intro = "Voici le résumé de vos routines pour aujourd'hui. Pensez à compléter vos tâches et à les synchroniser.";
+    $txt_today_tasks = "Tâches d'aujourd'hui";
+    $txt_completed = "complétées";
+    $txt_badge_together = "Ensemble";
+    $txt_badge_custom = "Perso";
+    $txt_open_planning = "📅 Ouvrir le Planning Hebdomadaire";
+    $txt_no_tasks = "Aucune tâche prévue pour aujourd'hui. Passez une belle journée ! ✨";
 }
 
 include 'includes/head.php';
@@ -32,272 +64,474 @@ include 'includes/header.php';
 include 'includes/nav.php';
 ?>
 
-  <!-- Layout Grid -->
-  <div class="container no-sidebar">
+<style>
+  /* Styles exclusifs pour le Tableau de Bord d'accueil familial */
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
 
-    <!-- Main Content -->
-    <main>
+  .dashboard-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-header p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .date-banner {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: var(--bg-alt);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Grille des membres de la famille */
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .family-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .family-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(var(--primary-rgb), 0.25);
+  }
+
+  .family-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--bg-alt);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .family-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .family-name-wrap h4 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+  }
+
+  .family-progress-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 !important;
+  }
+
+  /* Liste de tâches du jour */
+  .today-task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+  }
+
+  .today-task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+    background: var(--bg-alt);
+    border: 1px solid transparent;
+    transition: var(--transition);
+  }
+
+  .today-task-item.checked {
+    opacity: 0.7;
+  }
+
+  .task-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-dark);
+    flex-shrink: 0;
+  }
+
+  .today-task-item.checked .task-status-dot {
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+  }
+
+  .today-task-text {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-main);
+    flex-grow: 1;
+    word-break: break-word;
+  }
+
+  .today-task-item.checked .today-task-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  /* Badge de type */
+  .today-task-badge {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+  }
+
+  .badge-together {
+    background: rgba(180, 83, 9, 0.1);
+    color: var(--accent);
+  }
+
+  .badge-custom {
+    background: rgba(13, 148, 136, 0.1);
+    color: var(--primary);
+  }
+
+  /* Barre de progression de carte */
+  .card-progress-bar {
+    height: 6px;
+    background: var(--bg-alt);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 1rem;
+    border: 1px solid var(--card-border);
+  }
+
+  .card-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Bouton d'action central */
+  .action-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-dashboard-action {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 0.85rem 2.5rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.25);
+    background: var(--primary);
+    color: #ffffff !important;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-dashboard-action:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.4);
+  }
+
+  .no-tasks-msg {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-dark);
+    margin: 2rem 0;
+  }
+</style>
+
+<div class="container no-sidebar">
+  <main>
+    <div class="dashboard-header">
+      <span class="section-badge"><?php echo htmlspecialchars($header_tag); ?></span>
+      <h3><?php echo htmlspecialchars($txt_welcome); ?></h3>
+      <p><?php echo htmlspecialchars($txt_intro); ?></p>
       
-      <!-- Empathetic Introduction Box -->
-      <div class="intro-callout">
-        <?php if ($lang === 'en'): ?>
-          <strong>To all moms and dads:</strong> I can feel all your dedication and the love you have for your child. Wanting to "know everything" already means looking for the best keys to understand and comfort them, because behind a child who opposes, there is almost always a child in pain who struggles to manage their emotions. Living with a child who has ADHD and ODD is an immense challenge that requires extraordinary energy. Here is a complete guide structured in chapters to help you.
-        <?php elseif ($lang === 'ro'): ?>
-          <strong>Tuturor mămicilor și tăticilor:</strong> Îți simt întreaga implicare și iubirea pe care o porți fiului tău. A dori să «știi totul» înseamnă deja să cauți cele mai bune chei pentru a-l înțelege și a-l alina, deoarece în spatele unui copil care se opune există aproape întotdeauna un copil în suferință care își gestionează greu emoțiile. A trăi cu un copil cu TDAH și TOP este o provocare imensă care cere o energie ieșită din comun. Iată un ghid complet structurat în capitole pentru a vă ajuta.
-        <?php else: ?>
-          <strong>À tous les mamans et papas :</strong> Je ressens toute ton implication et l'amour que tu portes à ton fils. Vouloir « tout savoir », c'est déjà chercher les meilleures clés pour le comprendre et le soulager, car derrière un enfant qui s'oppose, il y a presque toujours un enfant en souffrance qui gère mal ses émotions. Vivre avec un enfant TDAH et TOP est un immense défi qui demande une énergie hors du commun. Voici un guide complet structuré en chapitres pour vous aider.
-        <?php endif; ?>
+      <!-- Bannière de date -->
+      <div class="date-banner" id="today-date-text">
+        <!-- Rempli par JS -->
+      </div>
+    </div>
+
+    <!-- Grille Familiale -->
+    <div class="family-grid">
+      
+      <!-- Carte Ewan -->
+      <div class="family-card" id="card-ewan">
+        <div class="family-card-header">
+          <div class="family-avatar">👦</div>
+          <div class="family-name-wrap">
+            <h4>Ewan</h4>
+            <p class="family-progress-text">
+              <span id="ewan-completed">0</span> / <span id="ewan-total">0</span> <?php echo htmlspecialchars($txt_completed); ?>
+            </p>
+          </div>
+        </div>
+        
+        <ul class="today-task-list" id="ewan-task-list">
+          <!-- Injecté par JS -->
+        </ul>
+        
+        <div class="card-progress-bar">
+          <div class="card-progress-fill" id="ewan-progress-fill"></div>
+        </div>
       </div>
 
-      <!-- Overview Section -->
-      <section id="accueil-intro">
-        <?php if ($lang === 'en'): ?>
-          <span class="section-badge">Overview</span>
-          <h2><span>The intersection of ADHD and ODD</span></h2>
-          <p>
-            It is very common for a child with ADHD to also develop <strong>Oppositional Defiant Disorder (ODD)</strong>. It is estimated that <strong>40% to 70%</strong> of children with ADHD present this double diagnosis.
-          </p>
-          <p>
-            Although these two disorders are neurologically linked, they translate into very different behaviors and daily needs.
-          </p>
-
-          <div class="matrix-grid">
-            <div class="matrix-card" style="border-top: 4px solid var(--accent);">
-              <h4><span>🧠</span> ADHD alone</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                The child does not listen due to <strong>forgetfulness</strong>, <strong>distraction</strong>, or <strong>impulsivity</strong>. They have the desire to obey but their attention deficit prevents them from following instructions.
-              </p>
-              <a href="definition#tdah-seul" class="portal-link">Learn more →</a>
-            </div>
-            
-            <div class="matrix-card" style="border-top: 4px solid var(--primary);">
-              <h4><span>⚡</span> ADHD + ODD</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                The child manifests an <strong>active, repeated, and intentional resistance</strong> to rules and authority figures. They deliberately seek to test boundaries.
-              </p>
-              <a href="definition#tdah-top" class="portal-link">Learn more →</a>
-            </div>
+      <!-- Carte Florian -->
+      <div class="family-card" id="card-florian">
+        <div class="family-card-header">
+          <div class="family-avatar">👨</div>
+          <div class="family-name-wrap">
+            <h4>Florian</h4>
+            <p class="family-progress-text">
+              <span id="florian-completed">0</span> / <span id="florian-total">0</span> <?php echo htmlspecialchars($txt_completed); ?>
+            </p>
           </div>
-        <?php elseif ($lang === 'ro'): ?>
-          <span class="section-badge">Prezentare generală</span>
-          <h2><span>Intersecția dintre TDAH și TOP</span></h2>
-          <p>
-            Este foarte frecvent ca un copil cu TDAH să dezvolte și <strong>Tulburarea de Opoziție și Provocare (TOP)</strong>. Se estimează că <strong>40% până la 70%</strong> dintre copiii cu TDAH prezintă acest diagnostic dublu.
-          </p>
-          <p>
-            Deși aceste două tulburări sunt legate din punct de vedere neurologic, ele se traduc în comportamente și nevoi zilnice foarte diferite.
-          </p>
+        </div>
+        
+        <ul class="today-task-list" id="florian-task-list">
+          <!-- Injecté par JS -->
+        </ul>
+        
+        <div class="card-progress-bar">
+          <div class="card-progress-fill" id="florian-progress-fill"></div>
+        </div>
+      </div>
 
-          <div class="matrix-grid">
-            <div class="matrix-card" style="border-top: 4px solid var(--accent);">
-              <h4><span>🧠</span> Doar TDAH</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                Copilul nu ascultă din cauza <strong>uitării</strong>, <strong>distragerii</strong> sau <strong>impulsivității</strong>. Are voința de a asculta, dar deficitul său de atenție îl împiedică să urmeze instrucțiunile.
-              </p>
-              <a href="definition#tdah-seul" class="portal-link">Află mai multe →</a>
-            </div>
-            
-            <div class="matrix-card" style="border-top: 4px solid var(--primary);">
-              <h4><span>⚡</span> TDAH + TOP</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                Copilul manifestă o <strong>rezistență activă, repetată și intenționată</strong> în fața regulilor și a figurilor de autoritate. Caută să testeze limitele în mod deliberat.
-              </p>
-              <a href="definition#tdah-top" class="portal-link">Află mai multe →</a>
-            </div>
-          </div>
-        <?php else: ?>
-          <span class="section-badge">Vue d'ensemble</span>
-          <h2><span>Le croisement du TDAH et du TOP</span></h2>
-          <p>
-            Il est très fréquent qu'un enfant ayant un TDAH développe également un <strong>Trouble Oppositionnel avec Provocation (TOP)</strong>. On estime que <strong>40 % à 70 %</strong> des enfants TDAH présentent ce double diagnostic. 
-          </p>
-          <p>
-            Bien que ces deux troubles soient neurologiquement liés, ils se traduisent par des comportements et des besoins très différents au quotidien.
-          </p>
+    </div>
 
-          <div class="matrix-grid">
-            <div class="matrix-card" style="border-top: 4px solid var(--accent);">
-              <h4><span>🧠</span> TDAH seul</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                L'enfant n'écoute pas par <strong>oubli</strong>, <strong>distraction</strong> ou <strong>impulsivité</strong>. Il a la volonté d'obéir mais son déficit d'attention l'empêche de suivre les consignes.
-              </p>
-              <a href="definition#tdah-seul" class="portal-link">En savoir plus →</a>
-            </div>
-            
-            <div class="matrix-card" style="border-top: 4px solid var(--primary);">
-              <h4><span>⚡</span> TDAH + TOP</h4>
-              <p style="font-size:0.88rem; margin-bottom: 1rem;">
-                L'enfant manifeste une <strong>résistance active, répétée et intentionnelle</strong> face aux règles et aux figures d'autorité. Il cherche à tester les limites délibérément.
-              </p>
-              <a href="definition#tdah-top" class="portal-link">En savoir plus →</a>
-            </div>
-          </div>
-        <?php endif; ?>
-      </section>
+    <!-- Bouton d'action principal -->
+    <?php if (isset($_SESSION['user_id'])): ?>
+    <div class="action-container">
+      <a href="/planning" class="btn-dashboard-action">
+        <?php echo htmlspecialchars($txt_open_planning); ?>
+      </a>
+    </div>
+    <?php endif; ?>
+  </main>
+</div>
 
-      <!-- Dashboard / Portal Grid -->
-      <section id="dashboard-menu">
-        <?php if ($lang === 'en'): ?>
-          <span class="section-badge">Dashboard</span>
-          <h2><span>Explore the chapters</span></h2>
+<script>
+  // Tâches par défaut (issues du Google Sheet)
+  const defaultTasks = {
+    florian: {
+      Lundi: ["🧺 Lessive", "🧹 Aspirateur", "🛒 Courses"],
+      Mardi: ["🧽 Nettoyer Cuisine/SdB", "🐈 Caisse des chats"],
+      Mercredi: ["🧺 Lessive", "🗑️ Sortir poubelles"],
+      Jeudi: ["🪟 Poussières", "🛒 Courses"],
+      Vendredi: ["🧺 Lessive", "🧹 Aspirateur", "🐈 Caisse des chats", "🧽 Laver le sol"],
+      Samedi: ["🛋️ Repos / Loisirs", "🐈 Caisse des chats"],
+      Dimanche: ["🧺 Lessive", "🧹 Petit rangement", "🐈 Caisse des chats"]
+    },
+    ewan: {
+      Lundi: ["🧹 Ranger son bureau"],
+      Mardi: ["🍽️ Ranger la vaisselle de sa chambre"],
+      Mercredi: ["🛏️ Faire son lit"],
+      Jeudi: ["🍽️ Ranger la vaisselle de sa chambre"],
+      Vendredi: ["🧹 Ranger son bureau"],
+      Samedi: ["🛋️ Repos / Loisirs"],
+      Dimanche: ["🍽️ Ranger la vaisselle de sa chambre"]
+    }
+  };
+
+  const commonTask = "🎵 Mettre de la musique";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    displayTodayDate();
+    fetchTodayTasks();
+  });
+
+  // Formater et afficher la date du jour en haut
+  function displayTodayDate() {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const locale = <?php echo json_encode($lang === 'en' ? 'en-US' : ($lang === 'ro' ? 'ro-RO' : 'fr-FR')); ?>;
+    const today = new Date();
+    
+    // Capitaliser la première lettre
+    let dateString = today.toLocaleDateString(locale, options);
+    dateString = dateString.charAt(0).toUpperCase() + dateString.slice(1);
+    
+    document.getElementById("today-date-text").innerText = dateString;
+  }
+
+  // Obtenir le jour actuel en français ("Lundi", "Mardi", etc.)
+  function getFrenchDayName() {
+    const days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    const d = new Date();
+    return days[d.getDay()];
+  }
+
+  // Obtenir la date actuelle YYYY-MM-DD
+  function getTodayDateString() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  // Fetch les tâches du jour depuis la BDD
+  function fetchTodayTasks() {
+    const todayStr = getTodayDateString();
+    
+    fetch(`/api/planning-sync.php?date=${todayStr}&t=${Date.now()}`)
+      .then(response => {
+        if (!response.ok) throw new Error("HTTP error " + response.status);
+        return response.json();
+      })
+      .then(data => {
+        if (data.success) {
+          renderTodayDashboard(data.tasks);
+        } else {
+          throw new Error(data.error);
+        }
+      })
+      .catch(err => {
+        console.error("Erreur de récupération des tâches du jour en BDD, utilisation par défaut non cochée.", err);
+        renderTodayDashboard({ ewan: [], florian: [] });
+      });
+  }
+
+  // Rendu des listes sur la page d'accueil
+  function renderTodayDashboard(dbTasks) {
+    const currentDayFr = getFrenchDayName();
+    
+    ["ewan", "florian"].forEach(person => {
+      const listElement = document.getElementById(`${person}-task-list`);
+      listElement.innerHTML = "";
+      
+      const dbPersonTasks = dbTasks[person] || [];
+      const mergedTasks = [];
+      
+      // 1. Charger les tâches spécifiques par défaut pour aujourd'hui
+      const specificDefaults = defaultTasks[person][currentDayFr] || [];
+      specificDefaults.forEach(taskText => {
+        const dbMatch = dbPersonTasks.find(t => t.text === taskText && !t.isCustom);
+        mergedTasks.push({
+          text: taskText,
+          checked: dbMatch ? dbMatch.checked : false,
+          isCustom: false,
+          isCommon: false
+        });
+      });
+
+      // 2. Tâche commune
+      const dbCommonMatch = dbPersonTasks.find(t => t.text === commonTask && !t.isCustom);
+      mergedTasks.push({
+        text: commonTask,
+        checked: dbCommonMatch ? dbCommonMatch.checked : false,
+        isCustom: false,
+        isCommon: true
+      });
+
+      // 3. Tâches personnalisées ajoutées pour aujourd'hui
+      const dbCustomTasks = dbPersonTasks.filter(t => t.isCustom);
+      dbCustomTasks.forEach(dbCustom => {
+        mergedTasks.push({
+          text: dbCustom.text,
+          checked: dbCustom.checked,
+          isCustom: true,
+          isCommon: false
+        });
+      });
+
+      // Rendre la liste
+      let completedCount = 0;
+      let totalCount = mergedTasks.length;
+
+      if (totalCount === 0) {
+        listElement.innerHTML = `<li class="no-tasks-msg"><?php echo htmlspecialchars($txt_no_tasks); ?></li>`;
+      } else {
+        mergedTasks.forEach(task => {
+          if (task.checked) completedCount++;
           
-          <div class="portal-grid">
-            
-            <!-- Card 1 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Understanding ODD</h3>
-                <p>Discover clinical definitions (DSM-5), warning signs, neurological explanations, and diagnostic vigilance.</p>
-              </div>
-              <a href="definition" class="portal-link">Access chapter →</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Source Analysis</h3>
-                <p>Clinical feedback and psychoeducational analysis from specialized creators on TikTok and future prospects.</p>
-              </div>
-              <a href="temoignages" class="portal-link">Access chapter →</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Strategy Sheets</h3>
-                <p>Interactive practical tools for daily life: hyperfocus techniques, positive reinforcement, and modified communication.</p>
-              </div>
-              <a href="strategies" class="portal-link">Access chapter →</a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Support & Guidance</h3>
-                <p>Medical and therapeutic follow-up, Barkley method, recommended books, and parental reflection journal.</p>
-              </div>
-              <a href="accompagnement" class="portal-link">Access chapter →</a>
-            </div>
-
-            <!-- Card 5 : Synthesis -->
-            <div class="portal-card" style="border-top: 3px solid var(--primary); grid-column: 1 / -1;">
-              <div class="portal-card-body">
-                <h3>📄 Complete Synthesis</h3>
-                <p>Find all the condensed content in a structured document optimized for reading or printing: definitions, testimonials, practical tools, and sources.</p>
-              </div>
-              <a href="synthese" class="portal-link" style="font-size:1rem;">View synthesis →</a>
-            </div>
-
-          </div>
-        <?php elseif ($lang === 'ro'): ?>
-          <span class="section-badge">Tablou de bord</span>
-          <h2><span>Explorează capitolele</span></h2>
+          const li = document.createElement("li");
+          li.className = `today-task-item animate-task${task.checked ? ' checked' : ''}`;
           
-          <div class="portal-grid">
-            
-            <!-- Card 1 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Înțelegerea TOP</h3>
-                <p>Descoperă definițiile clinice (DSM-5), semnele de alarmă, explicația neurologică și vigilența diagnostică.</p>
-              </div>
-              <a href="definition" class="portal-link">Accesează capitolul →</a>
-            </div>
+          let badgeHTML = "";
+          if (task.isCommon) {
+            badgeHTML = `<span class="today-task-badge badge-together"><?php echo htmlspecialchars($txt_badge_together); ?></span>`;
+          } else if (task.isCustom) {
+            badgeHTML = `<span class="today-task-badge badge-custom"><?php echo htmlspecialchars($txt_badge_custom); ?></span>`;
+          }
 
-            <!-- Card 2 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Analiza Surselor</h3>
-                <p>Mărturii clinice și analize psihoeducaționale de la creatori specializați pe TikTok și perspective de viitor.</p>
-              </div>
-              <a href="temoignages" class="portal-link">Accesează capitolul →</a>
-            </div>
+          li.innerHTML = `
+            <span class="task-status-dot"></span>
+            <span class="today-task-text">${escapeHtml(task.text)}</span>
+            ${badgeHTML}
+          `;
+          listElement.appendChild(li);
+        });
+      }
 
-            <!-- Card 3 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Fișe Strategice</h3>
-                <p>Instrumente practice interactive pentru viața de zi cu zi: tehnici de hyperfocus, întărire pozitivă și comunicare adaptată.</p>
-              </div>
-              <a href="strategies" class="portal-link">Accesează capitolul →</a>
-            </div>
+      // Mettre à jour les indicateurs de progression
+      document.getElementById(`${person}-completed`).innerText = completedCount;
+      document.getElementById(`${person}-total`).innerText = totalCount;
+      
+      const pct = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+      document.getElementById(`${person}-progress-fill`).style.width = `${pct}%`;
+    });
+  }
 
-            <!-- Card 4 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Asistență și Sprijin</h3>
-                <p>Însoțire medicală și terapeutică, metoda Barkley, cărți recomandate și jurnalul de reflecție parentală.</p>
-              </div>
-              <a href="accompagnement" class="portal-link">Accesează capitolul →</a>
-            </div>
-
-            <!-- Card 5 : Sinteză -->
-            <div class="portal-card" style="border-top: 3px solid var(--primary); grid-column: 1 / -1;">
-              <div class="portal-card-body">
-                <h3>📄 Sinteză completă</h3>
-                <p>Găsește întreaga sinteză condensată într-un document structurat și optimizat pentru lectură sau imprimare: definiții, mărturii, instrumente practice și surse.</p>
-              </div>
-              <a href="synthese" class="portal-link" style="font-size:1rem;">Consultă sinteza →</a>
-            </div>
-
-          </div>
-        <?php else: ?>
-          <span class="section-badge">Tableau de bord</span>
-          <h2><span>Explorer les chapitres</span></h2>
-          
-          <div class="portal-grid">
-            
-            <!-- Card 1 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Comprendre le TOP</h3>
-                <p>Découvrez les définitions cliniques (DSM-5), les signes d'alerte, l'explication neurologique et la vigilance diagnostique.</p>
-              </div>
-              <a href="definition" class="portal-link">Accéder au chapitre →</a>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Analyse des Sources</h3>
-                <p>Retours d'expérience cliniques et analyses psychoéducatives issus de créateurs spécialisés sur TikTok et perspectives d'avenir.</p>
-              </div>
-              <a href="temoignages" class="portal-link">Accéder au chapitre →</a>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Fiches Stratégiques</h3>
-                <p>Outils pratiques interactifs pour le quotidien : techniques d'hyperfocus, renforcement positif, et communication modifiée.</p>
-              </div>
-              <a href="strategies" class="portal-link">Accéder au chapitre →</a>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="portal-card">
-              <div class="portal-card-body">
-                <h3>Prise en Charge</h3>
-                <p>Accompagnement médical et thérapeutique, méthode Barkley, livres recommandés et carnet de réflexion parentale.</p>
-              </div>
-              <a href="accompagnement" class="portal-link">Accéder au chapitre →</a>
-            </div>
-
-            <!-- Card 5 : Synthèse -->
-            <div class="portal-card" style="border-top: 3px solid var(--primary); grid-column: 1 / -1;">
-              <div class="portal-card-body">
-                <h3>📄 Synthèse complète</h3>
-                <p>Retrouvez l'ensemble du contenu condensé en un document structuré et optimisé pour la lecture ou l'impression : définitions, témoignages, outils pratiques et sources.</p>
-              </div>
-              <a href="synthese" class="portal-link" style="font-size:1rem;">Consulter la synthèse →</a>
-            </div>
-
-          </div>
-        <?php endif; ?>
-      </section>
-
-    </main>
-  </div>
+  function escapeHtml(text) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+  }
+</script>
 
 <?php
 include 'includes/footer.php';

@@ -1,5 +1,16 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
+    // Configurer les cookies de session avant session_start()
+    // (obligatoire sous HTTPS/GAE pour que les cookies persistent correctement)
+    $isSecureProto = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+
+    if ($isSecureProto) {
+        ini_set('session.cookie_secure', 1);
+    }
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.cookie_samesite', 'Lax');
+
     session_start();
 }
 

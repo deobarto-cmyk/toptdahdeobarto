@@ -3,22 +3,9 @@
  * Configuration globale de l'application
  */
 
+
 // Définir le fuseau horaire
 date_default_timezone_set('Europe/Paris');
-
-// Configuration sécurisée des sessions (indispensable pour la persistance des cookies sous HTTPS avec Google OAuth)
-$isSecure = false;
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-    $isSecure = true;
-} elseif (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
-    $isSecure = true;
-}
-
-if ($isSecure) {
-    ini_set('session.cookie_secure', 1);
-}
-ini_set('session.cookie_httponly', 1);
-ini_set('session.cookie_samesite', 'Lax');
 
 
 // Tentative de chargement d'un fichier .env à la racine s'il existe
@@ -58,4 +45,9 @@ define('GOOGLE_CLIENT_SECRET', getenv('GOOGLE_CLIENT_SECRET') ?: '');
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost';
 define('GOOGLE_REDIRECT_URI', getenv('GOOGLE_REDIRECT_URI') ?: $protocol . '://' . $host . '/api/google-callback.php');
+
+// Liste des e-mails Google autorisés à s'inscrire (liste blanche familiale)
+define('ALLOWED_EMAILS', [
+    'ewan.laude.roman.fr@gmail.com'
+]);
 

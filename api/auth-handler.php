@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_avatar'] = $avatarUrl;
             
             unset($_SESSION['auth_error']);
-            header('Location: /forum');
+            header('Location: /');
             exit;
             
         } catch (PDOException $e) {
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_avatar'] = $user['avatar_url'];
                 
                 unset($_SESSION['auth_error']);
-                header('Location: /forum');
+                header('Location: /');
                 exit;
             } else {
                 // Identifiants erronés ou inscrit avec Google (sans password_hash)
@@ -135,7 +135,7 @@ if ($action === 'logout') {
     }
     
     session_destroy();
-    header('Location: /forum');
+    header('Location: /');
     exit;
 }
 

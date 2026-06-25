@@ -100,6 +100,20 @@ if (empty($googleId) || empty($email)) {
 
 // 4. Inscrire ou connecter l'utilisateur en base de données
 try {
+    // Vérifier d'abord si l'utilisateur existe déjà par son e-mail ou google_id
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? OR google_id = ?");
+    $stmt->execute([$email, $googleId]);
+    $existingUser = $stmt->fetch();
+    
+    $allowedEmails = defined('ALLOWED_EMAILS') ? ALLOWED_EMAILS : ['ewan.laude.roman.fr@gmail.com'];
+    
+    // Si l'utilisateur n'est pas déjà dans la base et que son e-mail n'est pas dans la liste blanche
+    if (!$existingUser && !in_array($email, $allowedEmails)) {
+        $_SESSION['auth_error'] = "Accès refusé : l'adresse email " . htmlspecialchars($email) . " n'est pas autorisée sur ce portail.";
+        header('Location: /login');
+        exit;
+    }
+
     // A. Chercher par google_id
     $stmt = $pdo->prepare("SELECT * FROM users WHERE google_id = ?");
     $stmt->execute([$googleId]);
@@ -119,7 +133,7 @@ try {
             $user['google_id'] = $googleId;
             if ($picture) $user['avatar_url'] = $picture;
         } else {
-            // C. L'utilisateur n'existe pas : on le crée
+            // C. L'utilisateur n'existe pas : on le crée (car son e-mail est dans la liste blanche)
             $stmt = $pdo->prepare("INSERT INTO users (google_id, email, display_name, avatar_url) VALUES (?, ?, ?, ?)");
             $stmt->execute([$googleId, $email, $name, $picture]);
             
@@ -147,7 +161,7 @@ try {
     $_SESSION['user_avatar'] = $user['avatar_url'];
     
     unset($_SESSION['auth_error']);
-    header('Location: /forum');
+    header('Location: /');
     exit;
     
 } catch (PDOException $e) {

@@ -157,11 +157,11 @@ header {
 .sticky-nav-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.6rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  /* height: 56px; */
 }
 
 .nav-logo {
@@ -181,33 +181,46 @@ header {
 }
 
 .nav-horizontal {
-  display: flex;
+  display: inline-flex;
+  background: var(--bg-alt);
+  border-radius: 30px;
+  padding: 4px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
   list-style: none;
-  padding: 0;
   margin: 0;
-  gap: 0.25rem;
-  flex: 1;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  gap: 0;
+}
+
+.nav-horizontal li {
+  display: inline-block;
 }
 
 .nav-horizontal li a {
-  display: block;
-  padding: 0.45rem 0.75rem;
-  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 25px;
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   font-family: var(--font-heading);
   white-space: nowrap;
   transition: var(--transition);
+  border: none;
+  background: transparent;
 }
 
-.nav-horizontal li a:hover,
-.nav-horizontal li.active a {
+.nav-horizontal li a:hover {
   color: var(--primary);
-  background: rgba(13, 148, 136, 0.08);
+}
+
+.nav-horizontal li.active a {
+  background: var(--primary);
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
 }
 
 .horizontal-search {
@@ -227,7 +240,7 @@ header {
   font-size: 0.75rem;
 }
 
-/* Responsive header */
+/* Responsive header & navigation */
 @media (max-width: 768px) {
   header {
     padding: 2rem 1.5rem 1.5rem;
@@ -240,11 +253,316 @@ header {
   }
 
   .sticky-nav-container {
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-horizontal {
+    margin: 0 auto; /* Centrer le menu principal Accueil/Planning */
+  }
+
+  .nav-profile-username-desktop,
+  .nav-login-text-desktop,
+  .dropdown-chevron-user {
+    display: none !important;
+  }
+
+  .nav-user-profile-btn {
+    padding: 3px !important;
+    border-radius: 50% !important;
   }
 
   .horizontal-search {
     display: none;
+  }
+}
+
+/* Espace Utilisateur dans la Navigation Principale */
+.nav-user-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.nav-user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-user-profile-btn:hover {
+  border-color: var(--primary);
+  background: var(--card-bg);
+}
+
+.nav-profile-img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--primary);
+}
+
+.nav-profile-avatar-placeholder {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.nav-profile-username-desktop {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-chevron-user {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+.nav-user-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.6rem;
+  min-width: 160px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-user-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-username {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-main);
+  padding: 0.2rem 0.4rem;
+  display: block;
+}
+
+.nav-user-dropdown hr {
+  border: none;
+  border-top: 1px solid var(--card-border);
+  margin: 0.2rem 0;
+}
+
+.dropdown-logout-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.dropdown-logout-link:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.nav-login-icon-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  transition: var(--transition);
+}
+
+.nav-login-icon-link:hover {
+  border-color: var(--primary);
+  background: var(--card-bg);
+}
+
+/* Container de menu utilisateur dans le header */
+.header-user-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Avatar dans le header (en haut à droite) */
+.header-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+  background: var(--bg-alt);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-user-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.header-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-avatar-placeholder {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+/* Menu déroulant au clic dans le header */
+.header-user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.6rem;
+  min-width: 160px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.header-user-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Bouton de login dans le header */
+.header-login-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--card-border);
+  background: var(--bg-alt);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.header-login-btn:hover {
+  border-color: var(--primary);
+  background: var(--card-bg);
+  transform: scale(1.05);
+}
+
+/* Rendre la barre de contrôles entière (onglets + bouton de sauvegarde) sticky au scroll */
+.planning-controls {
+  position: sticky !important;
+  top: 51px !important; /* Se colle parfaitement sous la barre sticky-nav */
+  z-index: 95 !important;
+  background: var(--bg-color) !important;
+  padding: 0.6rem 2rem !important;
+  border-bottom: 1px solid var(--card-border) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 0.5rem !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+[data-theme="dark"] .planning-controls {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  border-bottom-color: var(--card-border) !important;
+}
+
+/* Onglets de routine internes */
+.planning-tabs {
+  display: inline-flex !important;
+  background: var(--bg-alt) !important;
+  border-radius: 30px !important;
+  padding: 6px !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Masquer le statut de synchro textuel sur mobile pour laisser la place aux boutons */
+@media (max-width: 768px) {
+  .planning-controls {
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .sync-status {
+    display: none !important;
+  }
+  
+  .planning-tab-btn {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
